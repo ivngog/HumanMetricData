@@ -1,0 +1,10 @@
+﻿<Application x:Class="HumanMetricData.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HumanMetricData"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ImageBrush x:Key="btn_Close" ImageSource="btn_Close.png"/>
+        <ImageBrush x:Key="MainWin_Img" ImageSource="/1.jpg"/>
+    </Application.Resources>
+</Application>
