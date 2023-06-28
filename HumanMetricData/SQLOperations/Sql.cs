@@ -4,20 +4,24 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Windows;
 
 namespace HumanMetricData.SQLOperations
 {
-    public class SqlOperations : IDisposable
+    public class Sql : IDisposable
     {
         public SqlDataAdapter adapter;
         private readonly string _connectionString;
         public SqlConnection _sqlConnection = null;
         bool _disposed = false;
 
-        public SqlOperations() :this(@"" + Properties.Settings.Default.ConnectionString + Properties.Settings.Default.Connection + "")
+
+        public Sql() :this(@"" + Properties.Settings.Default.ConnectionString + Properties.Settings.Default.Connection + "")
         { }
 
-        public SqlOperations(string connectionString) => _connectionString = connectionString;
+        public Sql(string connectionString) => _connectionString = connectionString;
+
+        
 
         public void OpenConnection()
         {
@@ -59,6 +63,12 @@ namespace HumanMetricData.SQLOperations
         public void Insert() { }
         public void Update() { }
         public void Delete() { }
+
+        public void LoadMainData()
+        {
+            
+            
+        }
 
     }
 }

@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:HumanMetricData"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ImageBrush x:Key="btn_Close" ImageSource="btn_Close.png"/>
-        <ImageBrush x:Key="MainWin_Img" ImageSource="/1.jpg"/>
+        <ImageBrush x:Key="btn_Close" ImageSource="Images/Icons/btn_Close.png"/>
+        <ImageBrush x:Key="MainWin_Img" ImageSource="Images/MainWFont/1.jpg"/>
     </Application.Resources>
 </Application>

@@ -49,40 +49,8 @@ namespace HumanMetricData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("‰PNG\r\n\r\n   \r\nIHDR   И   И   љ†^¬  ЄPLTE   яяя                                " +
-            "                                                                                " +
-            "                                                                                " +
-            "                                                                                " +
-            "                         baacbbeddfeehggihhjjjlllonnpoorqqrqqМММОООПООПООП" +
-            "ППРППРРРУТТУТТФУУХФФХФФЦХХЧЦЦЦХХЧЦЦШЧЧшччшччщшшщшшъщщъщщыъъыъъэььюээБTщ   ЊtRNS" +
-            "   \r\n\r\n !\"#$,-.0125689;<=>?@ADEFGHIJKNOPQRTUVWX[\\^_`abcef" +
-            "hijklnopqrstvwxyz{|}~Ђ„…ћџџ  ЎўўЈ¤¤ҐЧЧЧШЩЩЩЪЬЬЬЭЭЭЮЮЮщъъыыььэ%д   нIDATxЪнЭщW" +
-            "W рi!bZh°мK,EђЂ\r\nD#\"’R€D\r\nІН5v»Їо-kжnаpМ ™dо{чѕyDѕїГјП9ђММ»п^гЅ\r\n‰q9‚" +
-            "AКCтZГСШдфНt&іk™Lъжфd,:n\r\nР_Њ RкЏН¬‚sVgbэЎZ­!UM}ip—фD_S•–ђЪћ«KЂЛТХћZН БЎ" +
-            "€%5ФRUмZ\"х@|бё\tІ1гaџ·ђєбР$3\\з¤y|иІ>Юм\r\n¤+ФIt©‡ґ\'Ѓ#ЙvµђЖА•x“:H`Мѕc5" +
-            "ђкИ2рf9R­ Т6 ь™kг†ФЊ \"жH\r\n+¤3\r\nЄ’одѓшО› .жy$8j3dЃ„—AuVВфђк(x‘h51Дџ o’р“BnЃ" +
-            "W№Х@йИЂwYк$ѓњ\\/іv’rКocћ\"ЃDАыD gA‡њ•†иб(-q‰Ђ.”‚њ}rJТmj1»…!k SЦ:!\'–@Ї," +
-            "ќ‚|°є%нЂT\'@ї$Єсђ(и(т)и™0\\СІDA|)Р5©cИР7#H—©1Дмr\r\n©IѓОIЧё…Њ‚Юu\ti35‡m" +
-            "® ѕ9Р=s>7ђУ N»ЂшпИ=yИ%8№TТd\r\n€ЩTrGвe нш_™эхЃмЄ6~єЏю™цТьУTцҐхЏ¤dc3чZ’" +
-            ",\t\tбП-KR’wд$ЎRђ„ђCNІгИеc%‰ђґг™eIJvyIщ“-ОђqQ‡ёд­/w„ФЇ\r\n;D%6 ZІ^пAѕ8Й>±," +
-            "IЙG.ч\'‰:@|we\"’}¬д®Ї8$ЊZДээЛЪ| йИећЎ$бвђё¤+)в@JвE!х¦¬\')кАIМъbђAЊг±eIJ№Ь\r" +
-            "\n„d°dщЭІ$%ЋЋ\\о7чл-щузэг’’ЋН\r\nДB‚ !g@Ў„КC !И·ЅR2 ¤@>Д~™IHи ЃэђПA™„Т=" +
-            "ы!Ч@•„Ф±s\r\nl‡T‰ма–’|ҐЖKU{!ЌBb @г^H/Ё‘ђ; w/дЉаѓк8\tЅ®м…  $XЬ\t€їAH8ЫЯ" +
-            "$6HHxІCъЃ_ВдЂ~;д2°K29 f‡HЦ ёђ°9тчЌ6€lБFY\tџVlїфvE\tЈ#я±UЂґ Ї„Х­HX%[Ї8" +
-            ".@ЂU’cuА@BS-з$av@ґ №4’Ч^8 VЂ\\ >\t»® УА&бwАtrё$\r\n°PЂЬ&‰\r\n , ”µгv‰ , ”=" +
-            "(l5;ЂCўИл\\ђ]‰*  dGўО±Оф?І#yгмxEм°яЏђџxyёеЩъљr‡Ъбьь‘і¬‰%¶п‘•rЙГЅ–+ µдK" +
-            "ъ»_—bЙuтзЧZIЊъ\tб •D‰џЩQJЙ н[¤#/щ†иў¶·(­8и$­”od’ б»_! ‘dе}є·с‚IЉn¤њc" +
-            "лЌЕ(‰‘нX•sln|яљQТOµ‡XЮА)\tнкєq°J4ымоyЙ“$MSщаЦБ\'№BR‹вЮБ&йҐЁВ8ё$ЌхZ8GiЙ·ўoЄ" +
-            "д+и°ЙUщљFјѓCТ#]e*в`ђdл~Ед’”l%¶ЁѓZrFІ6^ЬA,iђ<­ б •МКћ©::IСу#›Љt’в\'zЊ)UЂ" +
-            "G4’)йSoТuKҐ$Я№ЈеpС}ЗТ?¤чХJH~q»\r\n§s€€“ЎЩ—ТыѓЋ’\'®‹E\tОкf_Hпs:HЬЯs>«‹9=]T‚ЫЇ-*A" +
-            "C§9Пћ}&Ѕп\\D‚9NЩBФaаЂї~@тбH’х|Ш\'©Ш\'Б8Jч|0PSEІOҐлцHPЋ$e_›Dґ.Г&y‰:^¦/\r\nо,x" +
-            "A\"^_тV‚sД‰{ eKЧЙмJpЋтЅѓ°Эњv$rх>Џ^егЪ=\\rС_k-‘­[КKђЋe?CЗіы?KЧ-=ъЩеґ«tу {ж]х" +
-            " 3Ъµп\r\nШбІOгEН!Э6њ<®yзМгТЛ4„и.;ў1У]Ц8¦oїЯЩcТЃ№Щ;¬)¤ыќнR®gЯш¤@ЯxГЇЯ·I:рNПVЁ" +
-            "њi•3Д0ъ4‚фIНиФЖ!7ЈЗ0Оiв8\'=ЗкњцЋГ4Yl°BfЅхUИфЅПИж!vzщO8СУ\t•‹”*=њљ¤ќљї«чfHМ" +
-            "к)®ЫПЊкџ~9жкVР¤cГр\r\n+ќ==М5{єr¦ЃoП!U4џ}”w>ыц“oжЫ0KѓѕчXре€ПP 1ЊАзЯ—9@®G" +
-            "bНq6GјЅ\t€at$YЙЃµHA#DOщ\"$ґIHюlњІлЕъx‹а:¤!†QҐљЬћ‰Ц\tЇ‚ ’я0оћ’я3§є}k Ѓl—B" +
-            "ОКнA\r\nЦЛ-Ђ\r\nІ}c<$єW—\r\nJ_ќ’ПGЅЧ°OцKЧz?ўё4-$џЄжѕ\t··Зй‰ѕж*ўл’CvRкЏҐVKVS±юP-е%y" +
-            " »·c­бЃhlrzбv&c‚™ЙЬ^ћЊE В­ъ‹ •ђ#И„)я-2;yЕzФ2    IEND®B`‚")]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
         public string btn_Close {
             get {
                 return ((string)(this["btn_Close"]));

@@ -17,9 +17,26 @@ namespace HumanMetricData.Windows
     /// </summary>
     public partial class MainAppWindow : Window
     {
+        CristeningWin crist = new CristeningWin();
+        WeddingWin weddingWind = new WeddingWin();
+        FuneralWin funeralWin = new FuneralWin();
         public MainAppWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void OpenCristening_Click(object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = crist.Content;
+        }
+        private void OpenWedding_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = weddingWind.Content;
+        }
+        private void OpenFuneral_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = funeralWin.Content;
         }
     }
 }

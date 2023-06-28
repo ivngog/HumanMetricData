@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumanMetricData"
         mc:Ignorable="d"
-        Title="MyDB" Height="441" Width="590" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True"
-        Background="Black">
+        Title="MyDB" Height="441" Width="590" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Background="Black" AllowsTransparency="True" WindowStyle="None">
 
 
 
@@ -39,17 +39,17 @@
                     <Label Content="Enter to Client Data" Grid.Row="4" Foreground="White" FontWeight="Normal" Opacity="0.8" HorizontalAlignment="Left" VerticalAlignment="Center" Width="129" Grid.Column="1" Grid.ColumnSpan="2" Height="32"/>
                     <Label Content="Login:" Grid.Row="5" Foreground="White" Margin="200,4,0,1" Padding="0,0,0,0" HorizontalAlignment="Left" Width="50"/>
 
-                    <TextBox x:Name="LoginToClient" Text="login" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" Opacity="0.5" Height="25" FontSize="16" TextAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" Background="Black" Foreground="White"/>
+                    <TextBox x:Name="LoginToClient" ToolTip="Enter your Username" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" Opacity="0.5" Height="25" FontSize="16" TextAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" Background="Black" Foreground="White"/>
                     <Label Content="Password:" Grid.Row="6" Foreground="White" HorizontalAlignment="Left" Margin="200,4,0,1" Width="56" Padding="0,0,0,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
-                    <TextBox x:Name="PswdToClient" Text="Password" Grid.Row="6" Grid.Column="1"  VerticalAlignment="Center" Opacity="0.5" Height="25" FontSize="16" TextAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" Background="Black" Foreground="White"/>
-                    <Button Content="Enter" Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"
+                    <TextBox x:Name="PswdToClient" ToolTip="Enter your Password" Grid.Row="6" Grid.Column="1"  VerticalAlignment="Center" Opacity="0.5" Height="25" FontSize="16" TextAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" Background="Black" Foreground="White"/>
+                    <Button Content="Enter"  Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"
             Background="#FFB8B8B8"
             Foreground="Black"
             FontWeight="Black"
             BorderThickness="0"
             Width="45"
             Height="45"
-            FontSize="16" Opacity="0.5">
+            FontSize="16" Opacity="0.5" Click="OpenClient_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>
@@ -94,7 +94,7 @@
             BorderThickness="0"
             Width="45"
             Height="45"
-            FontSize="16" Opacity="0.5">
+            FontSize="16" Opacity="0.5" Click="OpenSettings_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>

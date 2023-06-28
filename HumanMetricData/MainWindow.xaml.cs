@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing.Configuration;
-using HumanMetricData.Images;
+using HumanMetricData.Windows;
+using HumanMetricData.SQLOperations;
 
 namespace HumanMetricData
 {
@@ -22,14 +23,34 @@ namespace HumanMetricData
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainAppWindow mainApp = new MainAppWindow();
+        LoadDataToMainAppWindow loadData = new LoadDataToMainAppWindow();
         
         public MainWindow()
         {
             InitializeComponent();
+            mainApp.Show();
+            
         }
 
-        private void OpenApp_Click(object sender, RoutedEventArgs e)
+       
+        
+        private void OpenClient_Click(object sender, RoutedEventArgs e)
         {
+
+            if (LoginToClient.Text != string.Empty & PswdToClient.Text != string.Empty)
+            {
+                loadData.LoadDataApp(LoginToClient.Text, PswdToClient.Text);
+                if(loadData.openApp == true)
+                {
+                    mainApp.Show();
+                    this.Hide();
+
+                }
+                
+            }
+
+            else { MessageBox.Show("Not all fields had filled"); }
 
         }
 
@@ -39,5 +60,12 @@ namespace HumanMetricData
         }
 
         
+
+       
+
+        private void OpenSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

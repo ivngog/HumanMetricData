@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumanMetricData.Windows"
         mc:Ignorable="d"
-        Title="MainAppWindow" Height="450" Width="800">
+        Title="Human metric data" Height="800" Width="1300" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Icon="../Images/Icons/1lerc2tu.png" FontSize="16">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="215*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" Grid.Row="0" >
+            <MenuItem x:Name="file" Width="Auto" Height="22" Header="_File"/>
+            <MenuItem Header="Journals">
+                <MenuItem Header="Cristening" Click="OpenCristening_Click"/>
+                <MenuItem Header="Wedding" Click="OpenWedding_Click"/>
+                <MenuItem Header="funeral" Click="OpenFuneral_Click"/>
+            </MenuItem>
+        </Menu>
+        <ContentControl x:Name="MainContent" Grid.Row="1"/>
+
+
+
+
+
+
     </Grid>
 </Window>
