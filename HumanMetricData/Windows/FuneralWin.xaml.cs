@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HumanMetricData.Windows.AddNewWindows;
+using HumanMetricData.Windows.EditWindows;
 
 namespace HumanMetricData.Windows
 {
@@ -20,6 +22,18 @@ namespace HumanMetricData.Windows
         public FuneralWin()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewFuneral addFuneral = new AddNewFuneral();
+            addFuneral.Show();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            EditFuneral editFuneral = new EditFuneral();
+            editFuneral.Show();
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 F:\Portfolio\HumanMetricData\HumanMetricData\App.xaml
-5-1894972252
+111771860320
 
-19621860667
+27497419928
 1931079081374
-MainWindow.xaml;Windows\CristeningWin.xaml;Windows\FuneralWin.xaml;Windows\MainAppWindow.xaml;Windows\WeddingWin.xaml;
+MainWindow.xaml;Windows\AddNewWindows\AddNewCristening.xaml;Windows\AddNewWindows\AddNewFuneral.xaml;Windows\AddNewWindows\AddNewWedding.xaml;Windows\CristeningWin.xaml;Windows\EditWindows\EditCristening.xaml;Windows\EditWindows\EditFuneral.xaml;Windows\EditWindows\EditWedding.xaml;Windows\FuneralWin.xaml;Windows\MainAppWindow.xaml;Windows\WeddingWin.xaml;
 
 True
 

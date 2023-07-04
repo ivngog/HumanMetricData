@@ -36,3 +36,15 @@ F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\Fun
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\WeddingWin.g.cs
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\FuneralWin.baml
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\WeddingWin.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewCristening.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewFuneral.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewWedding.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditCristening.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditFuneral.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditWedding.g.cs
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewCristening.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewFuneral.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\AddNewWindows\AddNewWedding.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditCristening.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditFuneral.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditWedding.baml

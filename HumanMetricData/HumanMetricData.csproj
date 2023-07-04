@@ -14,8 +14,14 @@
     <None Remove="59044415e6b7ed14d87aad0f06285f3b.jpg" />
     <None Remove="btn_Close2.png" />
     <None Remove="Images\Icons\1lerc2tu.png" />
+    <None Remove="Images\Icons\Add.png" />
     <None Remove="Images\Icons\btn_Close.png" />
+    <None Remove="Images\Icons\btn_SendToW.png" />
+    <None Remove="Images\Icons\Delete.png" />
+    <None Remove="Images\Icons\Edit.png" />
+    <None Remove="Images\Icons\search.png" />
     <None Remove="Images\mainwfont\1.jpg" />
+    <None Remove="Windows\AddNewWindows\1.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,8 +56,14 @@
     <Resource Include="Images\Icons\1lerc2tu.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Icons\Add.png" />
     <Resource Include="Images\Icons\btn_Close.png" />
+    <Resource Include="Images\Icons\btn_SendToW.png" />
+    <Resource Include="Images\Icons\Delete.png" />
+    <Resource Include="Images\Icons\Edit.png" />
+    <Resource Include="Images\Icons\search.png" />
     <Resource Include="Images\mainwfont\1.jpg" />
+    <Resource Include="Windows\AddNewWindows\1.jpg" />
   </ItemGroup>
 
   <ItemGroup>

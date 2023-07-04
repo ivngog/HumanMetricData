@@ -23,34 +23,76 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="26*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="24*"/>
 
-            <RowDefinition Height="151*"/>
-            <RowDefinition Height="438*"/>
-            <RowDefinition Height="78*"/>
+
+            <RowDefinition Height="126*"/>
+            <RowDefinition Height="10*"/>
+
+            <RowDefinition Height="417*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="WEDDING JOURNAL" Grid.Row="0" Grid.ColumnSpan="11" Margin="5,15,5,5" TextAlignment="Center" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Active Record:" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-        <TextBox Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,6" Grid.RowSpan="2" />
-        <Label Content="Date of Wedding:" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Top" Padding="0,0,0,0" Margin="10,0,0,0" />
-        <DatePicker Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" Padding="0,0,0,0" Margin="142,0,11,0" SelectedDateFormat="Short" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" />
+        <Label Content="Active Record:" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="0,0,0,0" Margin="10,0,69,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Height="18"/>
+        <TextBox Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,55,179,0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <Label Content="date of:" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="10,0,107,0" Height="26" />
+        <DatePicker  Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" Padding="0,0,0,0" Margin="90,0,90,0" SelectedDateFormat="Short" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="23" Grid.ColumnSpan="2" />
         <Label Content="The series and number of the marriage certificate:" 
                Grid.Row="2" Grid.Column="1" Margin="10,6,0,0" Grid.ColumnSpan="3" HorizontalAlignment="Left" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="349" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="2" Grid.Column="4" Margin="0,6,0,0" Grid.RowSpan="2" />
-        <Label Content="№:" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Left" Width="30" Padding="0,0,0,0" UseLayoutRounding="True" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="6,0,0,0"/>
-        <TextBox  Grid.Row="2" Grid.Column="6" Margin="0,6,0,0" Grid.RowSpan="2"/>
-        <Label Content="Place of registration:" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  Margin="10,0,0,0"  Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" />
-        <TextBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="45,0,0,0"  VerticalContentAlignment="Center" />
-        <Label Content="Date of registration:" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="3" Margin="5,0,0,0"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,0,0,0" Width="140" HorizontalAlignment="Left"/>
-        <DatePicker Grid.Row="5" Grid.Column="7" Margin="15,0,0,0"  VerticalContentAlignment="Center" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-        <DataGrid Grid.Row="9" Margin="5,5,5,5" Grid.ColumnSpan="11" />
+        <TextBox Grid.Row="2" Grid.Column="3" Margin="179,6,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <Label Content="№:" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Left" Width="30" Padding="0,0,0,0" UseLayoutRounding="True" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="6,0,0,0" Height="18"/>
+        <TextBox  Grid.Row="2" Grid.Column="5" Margin="37,6,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="Place of registration:" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"  Margin="10,6,179,0"  Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" Grid.RowSpan="2" />
+        <TextBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="45,6,0,0"  VerticalContentAlignment="Center" Grid.RowSpan="2" />
+        <Label Content="Date of registration:" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="3" Margin="5,6,0,0"  VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="0,0,0,0" Width="140" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+        <DatePicker Grid.Row="5" Grid.Column="7" Margin="15,0,32,0"  VerticalContentAlignment="Center" Padding="0,0,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="22"/>
+        <DataGrid Grid.Row="10" Margin="5,5,5,5" Grid.ColumnSpan="11" />
+
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="3" HorizontalAlignment="Left" Orientation="Vertical" FlowDirection="LeftToRight" Margin="0,6,0,0" Width="785">
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Getting maried" HorizontalAlignment="Center"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="First Name" HorizontalAlignment="Left" Margin="10,0,0,-28"/>
+
+            <TextBox Width="560" Margin="0,0,15,0" Height="25" HorizontalAlignment="Center"/>
+
+            <Label Content="Last Name" Margin="10,1,0,-7" HorizontalAlignment="Left" Padding="5,5,5,5" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+            <TextBox HorizontalAlignment="Center" Width="560" Height="25" Margin="0,-20,15,0"/>
+
+            <Label Content="Patronymic" HorizontalAlignment="Left" Margin="10,0,0,-25"/>
+            <TextBox HorizontalAlignment="Center" Width="560" Height="25" Margin="0,0,15,0"/>
+            <ToggleButton Background="{StaticResource btn_Search}" Height="85" HorizontalAlignment="Right" Width="85" VerticalAlignment="Bottom" Margin="0,-88,20,20"  AutomationProperties.IsOffscreenBehavior="Default" AutomationProperties.IsRequiredForForm="True"  Cursor="Hand" ToolTip="Search"/>
+
+
+
+
+        </StackPanel>
+        <Border BorderBrush="#FFD8D8D8" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="3" HorizontalAlignment="Left" Margin="0,6,0,0" Width="780"/>
+        <StackPanel Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="2" Grid.RowSpan="8" Height="224" Margin="5,0,10,0" Width="220">
+            <Border BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="2" Grid.RowSpan="8" Height="224" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="217"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="10" Grid.RowSpan="8" Height="224" Margin="-8,0,5,0" Width="220">
+            <Border BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1" Grid.Row="1" Grid.Column="10" Grid.RowSpan="8" Height="224" VerticalAlignment="Stretch" Margin="-8,0,5,0" HorizontalAlignment="Stretch" Width="220"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="10" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,2">
+            <Button x:Name="AddNew" ToolTip="Add new record" Width="40" Height="40" Background="{StaticResource btn_Add}" HorizontalAlignment="Center" Margin="-129,6,0,1" BorderThickness="0,0,0,0" Click="btnAdd_Click"/>
+            <Button x:Name="Edit" ToolTip="Edit Record" Width="40" Height="40" Background="{StaticResource btn_Edit}" HorizontalAlignment="Center" Margin="-40,-41,0,5" VerticalAlignment="Bottom" BorderThickness="0,0,0,0" Click="btnEdit_Click"/>
+            <Button x:Name="Delete" ToolTip="Delete record" Width="40" Height="40" Background="{StaticResource btn_Delete}" HorizontalAlignment="Center" Margin="47,-45,0,5" VerticalAlignment="Bottom" BorderThickness="0,0,0,0"/>
+            <Button x:Name="SendToWord" ToolTip="Send report to Word" Width="40" Height="40" Background="{StaticResource btn_ToWord}" HorizontalAlignment="Center" Margin="131,-45,0,5" VerticalAlignment="Bottom" BorderThickness="0,0,0,0"/>
+        </StackPanel>
+
+
 
 
 

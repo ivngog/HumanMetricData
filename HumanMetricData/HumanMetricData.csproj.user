@@ -7,7 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\AddNewWindows\AddNewCristening.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddNewWindows\AddNewFuneral.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddNewWindows\AddNewWedding.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\CristeningWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EditWindows\EditCristening.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EditWindows\EditFuneral.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\EditWindows\EditWedding.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\FuneralWin.xaml.cs">
@@ -24,7 +42,25 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\AddNewWindows\AddNewCristening.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddNewWindows\AddNewFuneral.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddNewWindows\AddNewWedding.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\CristeningWin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EditWindows\EditCristening.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EditWindows\EditFuneral.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\EditWindows\EditWedding.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\FuneralWin.xaml">
