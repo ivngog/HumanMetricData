@@ -17,13 +17,18 @@
         <Menu x:Name="menu" Grid.Row="0" >
             <MenuItem x:Name="file" Width="Auto" Height="22" Header="_File"/>
             <MenuItem Header="Journals">
-                <MenuItem Header="Cristening" Click="OpenCristening_Click"/>
-                <MenuItem Header="Funeral" Click="OpenFuneral_Click"/>
-                <MenuItem Header="Wedding" Click="OpenWedding_Click"/>
-                
+                <MenuItem x:Name="Cristening" Header="Cristening" Click="OpenCristening_Click"/>
+                <MenuItem x:Name="Funeral" Header="Funeral" Click="OpenFuneral_Click"/>
+                <MenuItem x:Name="Wedding" Header="Wedding" Click="OpenWedding_Click"/>
+
             </MenuItem>
+            
         </Menu>
-        <ContentControl x:Name="MainContent" Grid.Row="1"/>
+        <ContentControl x:Name="MainContent" Grid.Row="1">
+            <Image Source="{Binding ImageSource, Source={StaticResource Main_Picture}}" Stretch="Fill"/>
+        </ContentControl>
+
+
 
 
 

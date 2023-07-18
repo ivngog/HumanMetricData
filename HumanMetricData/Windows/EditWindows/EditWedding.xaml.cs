@@ -20,7 +20,8 @@ namespace HumanMetricData.Windows.EditWindows
         public EditWedding()
         {
             InitializeComponent();
-            ChangeLanguage("ru");
+            ChangeLanguage("en");
+            OpenImage2.Click += OpenImage_Click;
         }
 
 
@@ -28,7 +29,6 @@ namespace HumanMetricData.Windows.EditWindows
         {
             RUEN ruen = new RUEN();
             ruen.ChengeLanguage(lang);
-            AddNewWeddingRecord.Content = ruen.AddWeddingRecord;
             ActiveRecord.Content = ruen.ActiveRecord;
             from.Content = ruen.From;
             GettingMaried.Content = ruen.GettingMaried;
@@ -53,6 +53,31 @@ namespace HumanMetricData.Windows.EditWindows
             Crowning.Content = ruen.Crowning;
             CrowningInitials.Content = ruen.CrowningInitials;
             Notes.Content = ruen.Notes;
+            EditWeddingRecord.Content = ruen.EditWedding;
+        }
+
+        private void OpenImage_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".jpg";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+                Uri uri = new Uri(filename);
+                ImageSource imgSource = new BitmapImage(uri);
+                IMG.ImageSource = imgSource;
+            }
         }
     }
 }

@@ -8,14 +8,30 @@ namespace HumanMetricData.Languages
     {
         
         string _lblAddRcrdCrsn;
+        string _addnewfuneral;
+        string _addrecordtowedding;
+
+        string _editcristening;
+        string _editfuneral;
+        string _editwedding;
+
         string _activeRecord;
         string _from;
         string _dateOfCristening;
+        string _dateofdeath;
+        string _dateoffuneral;
+
+        string _placeOfReg;
+        string _placeoffuneral;
+
+        string _funeralservice;
+        string _funeraldirector;
+
+
         string _birthday;
         string _firstname;
         string _lastname;
         string _patronymic;
-        string _placeOfReg;
         string _snbc;
         string _parents;
         string _motherinitials;
@@ -36,7 +52,7 @@ namespace HumanMetricData.Languages
         string _baptizer;
         string _baptizerinitials;
         string _notes;
-        string _addrecordtowedding;
+        
         string _gettingMaried;
         string _gettingMariedMan;
         string _gettingMariedWoman;
@@ -57,6 +73,207 @@ namespace HumanMetricData.Languages
         string _w2Address;
         string _crowning;
         string _crowningInitials;
+        string _sncd;
+        string _successfullyinserted;
+        string _journalCristening;
+        string _journalFuneral;
+        string _journalWedding;
+        string _initials;
+        string _bdate;
+        string _passport;
+        string _address;
+        string _birthCertificate;
+        string _deathCertificate;
+        string _weddingCertificate;
+        string _dateofcommitting;
+        string _performedsacrament;
+        string _nameOfJournal;
+
+        public string NameOfJournal
+        {
+            get { return _nameOfJournal; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _nameOfJournal = "Название журнала";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _nameOfJournal = "Name of journal";
+            }
+        }
+        public string PerformedSacrament
+        {
+            get { return _performedsacrament; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _performedsacrament = "Таинство совершил";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _performedsacrament = "Performed sacrament";
+            }
+        }
+        public string DateOf { get; set; }
+        public string DateOfCommiting
+        {
+            get { return _dateofcommitting; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _dateofcommitting = "Дата совершения таинства";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _dateofcommitting = "Date Of Committing";
+            }
+        }
+        public string CertificateOfBirth
+        {
+            get { return _birthCertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _birthCertificate = "Свидетельство о рождении";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _birthCertificate = "Birth Certificate";
+            }
+        }
+        public string CertificateOfDeath
+        {
+            get { return _deathCertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _deathCertificate = "Свидетельство о смерти";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _deathCertificate = "Death Certificate";
+            }
+        }
+        public string CertificateOfWedding
+        {
+            get { return _weddingCertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _weddingCertificate = "Свидетельство о браке";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _weddingCertificate = "Wedding Certificate";
+            }
+        }
+        public string Initials
+        {
+            get { return _initials; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _initials = "ФИО";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _initials = "Initials";
+            }
+        }
+        public string Bdate
+        {
+            get { return _bdate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _bdate = "Дата рождения";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _bdate = "Date of birth";
+            }
+        }
+        public string Passport
+        {
+            get { return _passport; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _passport = "Паспорт";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _passport = "Passport";
+            }
+        }
+        public string Address
+        {
+            get { return _address; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _address = "Адрес";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _address = "Address";
+            }
+        }
+
+        public string CristeningJournal
+        {
+            get { return _journalCristening; }
+            set {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _journalCristening = "ЖУРНАЛ \"КРЕЩЕНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _journalCristening = "CRISTENING JOURNAL";
+            }
+        }
+        public string FuneralJournal
+        {
+            get { return _journalFuneral; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _journalFuneral = "ЖУРНАЛ \"ОТПЕВАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _journalFuneral = "FUNERAL JOURNAL";
+            }
+        }
+        public string WeddingJournal
+        {
+            get { return _journalWedding; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _journalWedding = "ЖУРНАЛ \"ВЕНЧАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _journalWedding = "WEDDING JOURNAL";
+            }
+        }
+        public string SuccessfullyInserted
+        {
+            get { return _successfullyinserted; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _successfullyinserted = "Данные успешно добавленны в базу данных";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _successfullyinserted = "Data were successfully inserted to database";
+
+            }
+
+        }
 
         public string LabelAddRecordCristening
         {
@@ -73,6 +290,72 @@ namespace HumanMetricData.Languages
             }
             
         }
+        public string AddNewFuneralRecord
+        {
+            get { return _addnewfuneral; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _addnewfuneral = "ДОБАВИТЬ НОВУЮ ЗАПИСЬ В ЖУРНАЛ \"ОТПЕВАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _addnewfuneral = "ADD NEW RECORD TO FUNERAL JOURNAL";
+
+            }
+        }
+        public string AddWeddingRecord
+        {
+            get { return _addrecordtowedding; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _addrecordtowedding = "ДОБАВЛЕНИЕ НОВОЙ ЗАПИСИ В ЖУРНАЛ \"ВЕНЧАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _addrecordtowedding = "ADD NEW RECORD TO WEDDING JOURNAL";
+            }
+        }
+        public string EditCristening
+        {
+            get { return _editcristening; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _editcristening = "РЕДАКТИРОВАНИЕ ЗАПИСИ В ЖУРНАЛЕ \"КРЕЩЕНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _editcristening = "EDIT RECORD IN CRISTENING JOURNAL";
+            }
+        }
+        public string EditFuneral
+        {
+            get { return _editfuneral; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _editfuneral = "РЕДАКТИРОВАНИЕ ЗАПИСИ В ЖУРНАЛЕ \"ОТПЕВАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _editfuneral = "EDIT RECORD IN FUNERAL JOURNAL";
+            }
+        }
+        public string EditWedding
+        {
+            get { return _editwedding; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _editwedding = "РЕДАКТИРОВАНИЕ ЗАПИСИ В ЖУРНАЛЕ \"ВЕНЧАНИЕ\"";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _editwedding = "EDIT RECORD IN WEDDING JOURNAL";
+            }
+        }
 
         public string ActiveRecord
         {
@@ -81,10 +364,10 @@ namespace HumanMetricData.Languages
             {
                 if (value == "RU" || value == "ru" || value == "Ru")
                 {
-                    _activeRecord = "А/З:";
+                    _activeRecord = "№:";
                 }
                 else if (value == "EN" || value == "en" || value == "En")
-                    _activeRecord = "A/R:";
+                    _activeRecord = "№:";
             }
         }
         public string From
@@ -165,19 +448,7 @@ namespace HumanMetricData.Languages
                     _patronymic = "Patronymic:";
             }
         }
-        public string PlaceOfReg
-        {
-            get { return _placeOfReg; }
-            set
-            {
-                if (value == "RU" || value == "ru" || value == "Ru")
-                {
-                    _placeOfReg = "Место рег:";
-                }
-                else if (value == "EN" || value == "en" || value == "En")
-                    _placeOfReg = "Place of reg:";
-            }
-        }
+        
         public string SNBC
         {
             get { return _snbc; }
@@ -191,6 +462,20 @@ namespace HumanMetricData.Languages
                     _snbc = "Series and number of birth sertificate:";
             }
         }
+        public string SNCD
+        {
+            get { return _sncd; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _sncd = "Серия и № свидетельства о смерти:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _sncd = "Series and number of death sertificate:";
+            }
+        }
+
         public string Parents
         {
             get { return _parents; }
@@ -439,19 +724,6 @@ namespace HumanMetricData.Languages
             }
         }
 
-        public string AddWeddingRecord
-        {
-            get { return _addrecordtowedding; }
-            set
-            {
-                if (value == "RU" || value == "ru" || value == "Ru")
-                {
-                    _addrecordtowedding = "Добавление новой записи в журнал \"Венчание\"";
-                }
-                else if (value == "EN" || value == "en" || value == "En")
-                    _addrecordtowedding = "Add new record to Wedding journal";
-            }
-        }
         public string GettingMaried
         {
             get { return _gettingMaried; }
@@ -465,7 +737,6 @@ namespace HumanMetricData.Languages
                     _gettingMaried = "Getting maried";
             }
         }
-
         public string GettingMariedMan
         {
             get { return _gettingMariedMan; }
@@ -479,7 +750,6 @@ namespace HumanMetricData.Languages
                     _gettingMariedMan = "Getting maried:";
             }
         }
-
         public string GettingMariedWoman
         {
             get { return _gettingMariedWoman; }
@@ -493,7 +763,6 @@ namespace HumanMetricData.Languages
                     _gettingMariedWoman = "Getting maried:";
             }
         }
-
         public string GettingMariedBirthDateMan
         {
             get { return _gettingMariedBirthDateMan; }
@@ -507,7 +776,6 @@ namespace HumanMetricData.Languages
                     _gettingMariedBirthDateMan = "Date of birth:";
             }
         }
-
         public string GettingMariedBirthDateWoman
         {
             get { return _gettingMariedBirthDateWoman;  }
@@ -521,7 +789,6 @@ namespace HumanMetricData.Languages
                     _gettingMariedBirthDateWoman = "Date of birth:";
             }
         }
-
         public string PassportGMMan
         {
             get { return _passportgmman; }
@@ -535,7 +802,6 @@ namespace HumanMetricData.Languages
                     _passportgmman = "Passport series and number:";
             }
         }
-
         public string PassportGMWoman
         {
             get { return _passportgmwoman; }
@@ -549,7 +815,6 @@ namespace HumanMetricData.Languages
                     _passportgmwoman = "Passport series and number:";
             }
         }
-
         public string GMAddressMan
         {
             get { return _gmaddressman; }
@@ -563,7 +828,6 @@ namespace HumanMetricData.Languages
                     _gmaddressman = "Address:";
             }
         }
-
         public string GMAddressWoman
         {
             get { return _gmaddresswoman; }
@@ -577,7 +841,6 @@ namespace HumanMetricData.Languages
                     _gmaddresswoman = "Address:";
             }
         }
-
         public string Witnesses
         {
             get { return _witnesses; }
@@ -591,7 +854,6 @@ namespace HumanMetricData.Languages
                     _witnesses = "Witnesses";
             }
         }
-
         public string WitnessFirst
         {
             get { return _witnessFirst; }
@@ -618,7 +880,6 @@ namespace HumanMetricData.Languages
                     _witnessSecond = "Witness's initials:";
             }
         }
-
         public string W1Bdate
         {
             get { return _w1Bdate; }
@@ -632,7 +893,6 @@ namespace HumanMetricData.Languages
                     _w1Bdate = "Date of birth:";
             }
         }
-
         public string W2Bdate
         {
             get { return _w2Bdate; }
@@ -646,7 +906,6 @@ namespace HumanMetricData.Languages
                     _w2Bdate = "Date of birth:";
             }
         }
-
         public string PassportW1
         {
             get { return _passportW1; }
@@ -660,7 +919,6 @@ namespace HumanMetricData.Languages
                     _passportW1 = "Passport series and number:";
             }
         }
-
         public string PassportW2
         {
             get { return _passportW2; }
@@ -674,7 +932,6 @@ namespace HumanMetricData.Languages
                     _passportW2 = "Passport series and number:";
             }
         }
-
         public string W1Address
         {
             get { return _w1Address; }
@@ -688,7 +945,6 @@ namespace HumanMetricData.Languages
                     _w1Address = "Address:";
             }
         }
-
         public string W2Address
         {
             get { return _w2Address; }
@@ -702,7 +958,6 @@ namespace HumanMetricData.Languages
                     _w2Address = "Address:";
             }
         }
-
         public string Crowning
         {
             get { return _crowning; }
@@ -716,7 +971,6 @@ namespace HumanMetricData.Languages
                     _crowning = "Crowning";
             }
         }
-
         public string CrowningInitials
         {
             get { return _crowningInitials; }
@@ -731,9 +985,96 @@ namespace HumanMetricData.Languages
             }
         }
 
+        public string DateOfDeath
+        {
+            get { return _dateofdeath; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _dateofdeath = "Дата смерти:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _dateofdeath = "Date of death:";
+            }
+        }
+        public string DateOfFuneral
+        {
+            get { return _dateoffuneral; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _dateoffuneral = "Дата отпевания:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _dateoffuneral = "Date of funeral:";
+            }
+        }
+
+        public string PlaceOfReg
+        {
+            get { return _placeOfReg; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _placeOfReg = "Место рег:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _placeOfReg = "Place of reg:";
+            }
+        }
+        public string PlaceOfFuneral
+        {
+            get { return _placeoffuneral; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _placeoffuneral = "Место отпевания:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _placeoffuneral = "Place of funeral:";
+            }
+        }
+        public string FuneralService
+        {
+            get { return _funeralservice; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _funeralservice = "Отпевание совершил:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _funeralservice = "The funeral service was performed:";
+            }
+        }
+        public string FuneralDirector
+        {
+            get { return _funeraldirector; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _funeraldirector = "Отпевающий:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _funeraldirector = "Funeral Director";
+            }
+        }
+      
+
         public void ChengeLanguage(string lang)
         {
             LabelAddRecordCristening = lang;
+            AddNewFuneralRecord = lang;
+            AddWeddingRecord = lang;
+            EditCristening = lang;
+            EditFuneral = lang;
+            EditWedding = lang;
+
             ActiveRecord = lang;
             From = lang;
             DateOfCristening = lang;
@@ -763,7 +1104,7 @@ namespace HumanMetricData.Languages
             BaptizerInitials = lang;
             Notes = lang;
 
-            AddWeddingRecord = lang;
+            
             GettingMaried = lang;
             GettingMariedMan = lang;
             GettingMariedWoman = lang;
@@ -784,6 +1125,26 @@ namespace HumanMetricData.Languages
             W2Address = lang;
             Crowning = lang;
             CrowningInitials = lang;
+            DateOfDeath = lang;
+            DateOfFuneral = lang;
+            PlaceOfFuneral = lang;
+            SNCD = lang;
+            FuneralService = lang;
+            FuneralDirector = lang;
+            SuccessfullyInserted = lang;
+            CristeningJournal = lang;
+            WeddingJournal = lang;
+            FuneralJournal = lang;
+            Initials = lang;
+            Passport = lang;
+            Birthday = lang;
+            Address = lang;
+            CertificateOfBirth = lang;
+            CertificateOfDeath = lang;
+            CertificateOfWedding = lang;
+            DateOfCommiting = lang;
+            PerformedSacrament = lang;
+            NameOfJournal = lang;
         }
     }
 }

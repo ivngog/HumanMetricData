@@ -12,6 +12,6 @@
         <ImageBrush x:Key="btn_Delete" ImageSource="Images/Icons/Delete.png" Stretch="UniformToFill"/>
         <ImageBrush x:Key="btn_ToWord" ImageSource="Images/Icons/btn_SendToW.png"/>
         <ImageBrush x:Key="App_Icon" ImageSource="Images/Icons/1lerc2tu.png"/>
-        
+        <ImageBrush x:Key="Main_Picture" ImageSource="Images/Pictures/yzluonhq.jpg"/>
     </Application.Resources>
 </Application>

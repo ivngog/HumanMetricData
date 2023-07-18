@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Drawing.Configuration;
 using HumanMetricData.Windows;
 using HumanMetricData.SQLOperations;
+using HumanMetricData.Model.Base;
 
 namespace HumanMetricData
 {
@@ -23,22 +24,21 @@ namespace HumanMetricData
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainAppWindow mainApp = new MainAppWindow();
-        LoadDataToMainAppWindow loadData = new LoadDataToMainAppWindow();
+        readonly MainAppWindow mainApp;
+        readonly LoadDataToMainAppWindow loadData;
         
         public MainWindow()
         {
             InitializeComponent();
+            mainApp = new MainAppWindow();
+            loadData = new LoadDataToMainAppWindow();
             mainApp.Show();
-            
         }
-
-       
         
         private void OpenClient_Click(object sender, RoutedEventArgs e)
         {
 
-            if (LoginToClient.Text != string.Empty & PswdToClient.Text != string.Empty)
+            /*if (LoginToClient.Text != string.Empty & PswdToClient.Text != string.Empty)
             {
                 loadData.LoadDataApp(LoginToClient.Text, PswdToClient.Text);
                 if(loadData.openApp == true)
@@ -50,7 +50,7 @@ namespace HumanMetricData
                 
             }
 
-            else { MessageBox.Show("Not all fields had filled"); }
+            else { MessageBox.Show("Not all fields had filled"); }*/
 
         }
 

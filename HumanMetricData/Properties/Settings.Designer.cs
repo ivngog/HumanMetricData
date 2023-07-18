@@ -25,7 +25,8 @@ namespace HumanMetricData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=(LocalDB)\\MSSQLLocalDB; Integrated Security=true ;AttachDbFileName=")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\Portfolio\\HumanMetricData\\" +
+            "HumanMetricData\\Database\\MetricData.mdf;Integrated Security=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

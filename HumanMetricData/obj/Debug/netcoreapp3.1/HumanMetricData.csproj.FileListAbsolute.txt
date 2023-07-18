@@ -29,7 +29,6 @@ F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\HumanMetric
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\App.baml
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\HumanMetricData.Properties.Resources.resources
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\HumanMetricData.csproj.GenerateResource.cache
-F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\HumanMetricData.csproj.AssemblyReference.cache
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\CristeningWin.g.cs
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\CristeningWin.baml
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\FuneralWin.g.cs

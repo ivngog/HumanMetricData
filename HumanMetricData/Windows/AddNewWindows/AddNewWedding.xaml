@@ -109,7 +109,7 @@
         <DockPanel Grid.Row="13" Grid.Column="1" Grid.RowSpan="11" Grid.ColumnSpan="4" Margin="100,5,100,5" HorizontalAlignment="Stretch" >
             <Border  Grid.Row="2" Grid.Column="4" Grid.RowSpan="11" Grid.ColumnSpan="2" Margin="1,1,1,1" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1">
 
-                <Button x:Name="OpenImage">
+                <Button x:Name="OpenImage" Click="OpenImage_Click">
                     <Button.Background>
                         <ImageBrush x:Name="IMG"/>
                     </Button.Background>

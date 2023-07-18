@@ -11,6 +11,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HumanMetricData.Windows.AddNewWindows;
 using HumanMetricData.Languages;
+using HumanMetricData.SQLOperations;
+using HumanMetricData.Images;
+using System.IO;
 
 namespace HumanMetricData.Windows.EditWindows
 {
@@ -19,20 +22,61 @@ namespace HumanMetricData.Windows.EditWindows
     /// </summary>
     public partial class EditCristening : Window
     {
-        
-        
-        public EditCristening()
+        byte[] image_bytes;
+        byte[] img_bytes;
+        Sql sql;
+        public EditCristening(int id, string journalName)
         {
             InitializeComponent();
-            ChangeLanguage("ru");
+            sql = new Sql();
+            sql.Id = id;
+            sql.NameOfJournal = journalName;
+            ChangeLanguage("en");
+            DataToTextBox(sql.Id);
         }
 
-
+        void DataToTextBox(int id)
+        {
+            try
+            {
+                sql.Select(id);
+                txt_ActiveRecord.Text = sql.ActiveRecord;
+                date_RecordNumber.SelectedDate = sql.DateOfRecordNumber;
+                date_Committing.SelectedDate = sql.DateOfСommiting;
+                date_Birth.SelectedDate = sql.DateOfBirth;
+                txt_FirstName.Text = sql.FirstName;
+                txt_LastName.Text = sql.LastName;
+                txt_Patronymic.Text = sql.Patronymic;
+                txt_PlaceOfReg.Text = sql.PlaceOfRegistration;
+                txt_BirthCertificate.Text = sql.BirthCertificate;
+                txt_FIinitials.Text = sql.FirstInitials;
+                txt_FatherPassport.Text = sql.FirstPassport;
+                txt_AddressFather.Text = sql.FirstAddress;
+                date_Father.SelectedDate = sql.FirstBirthday;
+                txt_MIinitials.Text = sql.SecondInitials;
+                txt_MotherPassport.Text = sql.SecondPassport;
+                txt_MotherAddress.Text = sql.SecondAddress;
+                date_Mother.SelectedDate = sql.SecondBirthday;
+                txt_R1initials.Text = sql.ThirdInitials;
+                txt_R1Address.Text = sql.ThirdAddress;
+                txt_R1Passport.Text = sql.ThirdPassport;
+                date_R1Birth.SelectedDate = sql.ThirdBirthday;
+                txt_R2Iinitials.Text = sql.FourInitials;
+                txt_R2Address.Text = sql.FourAddress;
+                txt_R2Passport.Text = sql.FourPassport;
+                date_R2Birth.SelectedDate = sql.FourBirthday;
+                txt_performedSacrament.Text = sql.PerformedSacrament;
+                txt_Notes.Text = sql.Notes;
+                IMG.ImageSource = ByteImage.Convert(ByteImage.GetImageFromByteArray((byte[])sql.IMG));
+                img_bytes = (byte[])sql.IMG;
+            }
+            catch(Exception ex)
+            { MessageBox.Show(ex.Message);}
+        }
         public void ChangeLanguage(string lang)
         {
             RUEN ruen = new RUEN();
             ruen.ChengeLanguage(lang);
-            AddNewRecord.Content = ruen.LabelAddRecordCristening;
             ActiveRecord.Content = ruen.ActiveRecord;
             from.Content = ruen.From;
             dateOfCristening.Content = ruen.DateOfCristening;
@@ -63,6 +107,47 @@ namespace HumanMetricData.Windows.EditWindows
             Baptizer.Content = ruen.Baptizer;
             BaptizerInitizls.Content = ruen.BaptizerInitials;
             Notes.Content = ruen.Notes;
+            EditCristeningRecord.Content = ruen.EditCristening;
+        }
+
+        private void OpenImage_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".jpg";
+            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                image_bytes = File.ReadAllBytes(dlg.FileName);
+                // Open document 
+                string filename = dlg.FileName;
+                Uri uri = new Uri(filename);
+                ImageSource imgSource = new BitmapImage(uri);
+                IMG.ImageSource = imgSource;
+            }
+            
+        }
+
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            if(image_bytes == null)
+            {
+                image_bytes = img_bytes;
+               
+            }
+             sql.Update(sql.Id, txt_FirstName.Text, txt_LastName.Text, txt_Patronymic.Text, "", (DateTime)date_Birth.SelectedDate, txt_ActiveRecord.Text, (DateTime)date_RecordNumber.SelectedDate, (DateTime)date_Committing.SelectedDate, txt_PlaceOfReg.Text, txt_performedSacrament.Text, txt_Notes.Text, sql.NameOfJournal, txt_FIinitials.Text, txt_MIinitials.Text, txt_R1initials.Text, txt_R2Iinitials.Text, txt_FatherPassport.Text, txt_MotherPassport.Text, txt_R1Passport.Text, txt_R2Passport.Text, (DateTime)date_Father.SelectedDate, (DateTime)date_Mother.SelectedDate, (DateTime)date_R1Birth.SelectedDate, (DateTime)date_R2Birth.SelectedDate, txt_AddressFather.Text, txt_MotherAddress.Text, txt_R1Address.Text, txt_R2Address.Text, txt_BirthCertificate.Text, "", "", "", image_bytes);
+            
+            
+
+
         }
     }
 }

@@ -73,9 +73,7 @@
             <TextBox HorizontalAlignment="Center" Width="560" Height="25" Margin="0,0,15,0"/>
             <Label Content="Burial place:" HorizontalAlignment="Left" Margin="10,0,0,-25"/>
             <TextBox HorizontalAlignment="Center" Width="560" Height="25" Margin="0,0,15,0"/>
-            <ToggleButton Background="{StaticResource btn_Search}" Height="85" HorizontalAlignment="Right" Width="85" VerticalAlignment="Bottom" Margin="0,-98,20,20"  AutomationProperties.IsOffscreenBehavior="Default" AutomationProperties.IsRequiredForForm="True"  Cursor="Hand" ToolTip="Search"/>
-
-
+            <Button Background="{StaticResource btn_Search}" Height="85" HorizontalAlignment="Right" Width="85" VerticalAlignment="Bottom" Margin="0,-98,20,20"  AutomationProperties.IsOffscreenBehavior="Default" AutomationProperties.IsRequiredForForm="True"  Cursor="Hand" ToolTip="Search" BorderThickness="0,0,0,0"/>
 
 
         </StackPanel>
