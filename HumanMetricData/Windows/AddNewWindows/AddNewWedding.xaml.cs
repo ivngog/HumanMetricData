@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HumanMetricData.Languages;
+using HumanMetricData.Images;
+using HumanMetricData.SQLOperations;
 
 namespace HumanMetricData.Windows.AddNewWindows
 {
@@ -18,21 +20,33 @@ namespace HumanMetricData.Windows.AddNewWindows
     /// </summary>
     public partial class AddNewWedding : Window
     {
-        public AddNewWedding()
+        readonly RUEN ruen;
+        Sql sql;
+        OpenAndReadImage openImg;
+        byte[] image_bytes;
+        byte[] image_bytes2;
+        public AddNewWedding(string language)
         {
             InitializeComponent();
+            ruen = new RUEN();
             ChangeLanguage("en");
-            OpenImage2.Click += OpenImage_Click;
+            ChangeLanguage(language);
+            
         }
+
+        
 
 
         protected void ChangeLanguage(string lang)
         {
-            RUEN ruen = new RUEN();
+            
             ruen.ChengeLanguage(lang);
             AddNewWeddingRecord.Content = ruen.AddWeddingRecord;
             ActiveRecord.Content = ruen.ActiveRecord;
             from.Content = ruen.From;
+            dateOfWedding.Content = ruen.DateOfWedding;
+            certificateOfWedding.Content = ruen.CertificateOfWedding;
+            placeOfWeding.Content = ruen.PlaceOfWedding;
             GettingMaried.Content = ruen.GettingMaried;
             GettigMariedMan.Content = ruen.GettingMariedMan;
             GettingMariedWoman.Content = ruen.GettingMariedWoman;
@@ -59,26 +73,57 @@ namespace HumanMetricData.Windows.AddNewWindows
 
         private void OpenImage_Click(object sender, RoutedEventArgs e)
         {
-            // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".jpg";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
 
-
-            // Display OpenFileDialog by calling ShowDialog method 
-            Nullable<bool> result = dlg.ShowDialog();
-
-
-            // Get the selected file name and display in a TextBox 
-            if (result == true)
+            try
             {
-                // Open document 
-                string filename = dlg.FileName;
-                Uri uri = new Uri(filename);
-                ImageSource imgSource = new BitmapImage(uri);
-                IMG.ImageSource = imgSource;
+                openImg = new OpenAndReadImage();
+                IMG.ImageSource = openImg.OpenImg();
+                image_bytes = openImg.readBytes();
             }
+            catch { }
+        }
+
+        
+        private void btn_OpenImage2_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                openImg = new OpenAndReadImage();
+                IMG2.ImageSource = openImg.OpenImg();
+                image_bytes2 = openImg.readBytes();
+            }
+            catch { }
+        }
+
+        private void btn_SaveClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+
+                sql = new Sql();
+                sql.InsertHuman(txt_GMFNameFirst.Text, txt_GMNLNameFirst.Text, txt_GMNPatronymicFirst.Text, txt_GMFirstAddress.Text, (DateTime)date_GettongMariedFirst.SelectedDate, DateTime.MinValue);
+                sql.InsertBase(txt_ActiveRecord.Text, (DateTime)date_ARDate.SelectedDate, (DateTime)date_WeddingDate.SelectedDate, sql.GetId(), txt_PlaceOfWedding.Text, txt_NameOfPerformed.Text, txt_WeddingNotes.Text, "Wedding", txt_R1Name.Text, txt_R2Name.Text, null, null, txt_R1Passport.Text, txt_R2Passport.Text, null, null, (DateTime)date_R1BDate.SelectedDate, (DateTime)date_R2BDate.SelectedDate, DateTime.MinValue, DateTime.MinValue, txt_R1Address.Text, txt_R2Address.Text, null, null);
+                sql.InsertDocuments(null, null, txt_CertificateOfWedding.Text, sql.GetId(), txt_passportGettingMariedFirst.Text);
+                sql.InsertImages(image_bytes, sql.GetId());
+
+                sql.InsertHuman(txt_GMFNameSecond.Text, txt_GMNLNameSecond.Text, txt_GMNPatronymicSecond.Text, txt_GMSecondAddress.Text, (DateTime)date_GettongMariedSecond.SelectedDate, DateTime.MinValue);
+                sql.InsertBase(txt_ActiveRecord.Text, (DateTime)date_ARDate.SelectedDate, (DateTime)date_WeddingDate.SelectedDate, sql.GetId(), txt_PlaceOfWedding.Text, txt_NameOfPerformed.Text, txt_WeddingNotes.Text, "Wedding", txt_R1Name.Text, txt_R2Name.Text, null, null, txt_R1Passport.Text, txt_R2Passport.Text, null, null, (DateTime)date_R1BDate.SelectedDate, (DateTime)date_R2BDate.SelectedDate, DateTime.MinValue, DateTime.MinValue, txt_R1Address.Text, txt_R2Address.Text, null, null);
+                sql.InsertDocuments(null, null, txt_CertificateOfWedding.Text, sql.GetId(), txt_passportGettingMariedSecond.Text);
+                sql.InsertImages(image_bytes2, sql.GetId());
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            finally
+            {
+                MessageBox.Show("The information successfly added.");
+                this.Close();
+            }
+        }
+
+        private void btn_CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

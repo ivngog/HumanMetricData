@@ -47,3 +47,6 @@ F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\Add
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditCristening.baml
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditFuneral.baml
 F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\Windows\EditWindows\EditWedding.baml
+F:\Portfolio\HumanMetricData\HumanMetricData\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Word.dll
+F:\Portfolio\HumanMetricData\HumanMetricData\bin\Debug\netcoreapp3.1\OFFICE.DLL
+F:\Portfolio\HumanMetricData\HumanMetricData\obj\Debug\netcoreapp3.1\HumanMetricData.csproj.AssemblyReference.cache

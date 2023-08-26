@@ -60,5 +60,17 @@ namespace HumanMetricData.Properties {
                 this["btn_Close"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Portfolio\\HumanMetricData\\HumanMetricData\\Reports\\ReportsToWordDoc")]
+        public string template {
+            get {
+                return ((string)(this["template"]));
+            }
+            set {
+                this["template"] = value;
+            }
+        }
     }
 }

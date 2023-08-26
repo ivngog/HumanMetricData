@@ -11,5 +11,8 @@
     <Setting Name="btn_Close" Type="(Web Service URL)" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="template" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:\Portfolio\HumanMetricData\HumanMetricData\Reports\ReportsToWordDoc</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

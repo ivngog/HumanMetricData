@@ -6,9 +6,9 @@ namespace HumanMetricData.Model.Base
 {
     public class Documents:Base
     {
-        public string BirthCertificate { get; set; }
-        public string DeathCertificate { get; set; }
-        public string WeddingCertificate { get; set; }
-        public string PassportNumber { get; set; }
+        public string BirthCertificate { get; set; } = null;
+        public string DeathCertificate { get; set; } = null;
+        public string WeddingCertificate { get; set; } = null;
+        public string PassportNumber { get; set; } = null;
     }
 }

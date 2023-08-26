@@ -17,36 +17,45 @@ namespace HumanMetricData.Windows
     /// </summary>
     public partial class MainAppWindow : Window
     {
-        
-        WeddingWin weddingWind = new WeddingWin();
-        FuneralWin funeralWin = new FuneralWin();
+        CristeningWin crist;
+        WeddingWin weddingWind;
+        FuneralWin funeralWin;
+        string language;
         public MainAppWindow()
         {
             InitializeComponent();
             
-           // MainContent.Content = crist.Content;
-
+            Eng.Checked += btnEng_Click;
         }
 
-        
+        private void btnRu_Click(object sender, RoutedEventArgs e)
+        {
+            language = "Ru";
+        }
+        private void btnEng_Click(object sender, RoutedEventArgs e)
+        {
+            language = "En";
+        }
+
         private void OpenCristening_Click(object sender, RoutedEventArgs e )
         {
-            CristeningWin crist = new CristeningWin("Cristening");
+            
+            crist = new CristeningWin("Cristening", language);
             MainContent.Content = crist.Content;
         }
         private void OpenWedding_Click(object sender, RoutedEventArgs e)
         {
-           // CristeningWin crist = new CristeningWin("Wedding");
-            //MainContent.Content = crist.Content;
-            new CristeningWin("Wedding");
+           
+            weddingWind = new WeddingWin("Wedding", language);
             MainContent.Content = weddingWind.Content;
         }
         private void OpenFuneral_Click(object sender, RoutedEventArgs e)
         {
-            //CristeningWin crist = new CristeningWin("Funeral");
-            //MainContent.Content = crist.Content;
-            new CristeningWin("Funeral");
+            
+            funeralWin = new FuneralWin("Funeral", language);
             MainContent.Content = funeralWin.Content;
         }
+
+        
     }
 }

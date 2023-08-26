@@ -24,14 +24,18 @@ namespace HumanMetricData.Windows.EditWindows
     {
         byte[] image_bytes;
         byte[] img_bytes;
-        Sql sql;
-        public EditCristening(int id, string journalName)
+        readonly RUEN ruen;
+        readonly Sql sql;
+        
+        public EditCristening(int id, string journalName, string language)
         {
             InitializeComponent();
+            ruen = new RUEN();
             sql = new Sql();
             sql.Id = id;
             sql.NameOfJournal = journalName;
             ChangeLanguage("en");
+            ChangeLanguage(language);
             DataToTextBox(sql.Id);
         }
 
@@ -48,6 +52,7 @@ namespace HumanMetricData.Windows.EditWindows
                 txt_LastName.Text = sql.LastName;
                 txt_Patronymic.Text = sql.Patronymic;
                 txt_PlaceOfReg.Text = sql.PlaceOfRegistration;
+                Address.Text = sql.Address;
                 txt_BirthCertificate.Text = sql.BirthCertificate;
                 txt_FIinitials.Text = sql.FirstInitials;
                 txt_FatherPassport.Text = sql.FirstPassport;
@@ -75,7 +80,7 @@ namespace HumanMetricData.Windows.EditWindows
         }
         public void ChangeLanguage(string lang)
         {
-            RUEN ruen = new RUEN();
+            
             ruen.ChengeLanguage(lang);
             ActiveRecord.Content = ruen.ActiveRecord;
             from.Content = ruen.From;
@@ -84,6 +89,7 @@ namespace HumanMetricData.Windows.EditWindows
             FirstName.Content = ruen.FirstName;
             LastName.Content = ruen.LastName;
             Patronymic.Content = ruen.Patronymic;
+            address.Content = ruen.Address;
             PlaceOfregistration.Content = ruen.PlaceOfReg;
             SNBS.Content = ruen.SNBC;
             Parents.Content = ruen.Parents;
@@ -112,42 +118,41 @@ namespace HumanMetricData.Windows.EditWindows
 
         private void OpenImage_Click(object sender, RoutedEventArgs e)
         {
-            // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".jpg";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
-
-
-            // Display OpenFileDialog by calling ShowDialog method 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            
-            // Get the selected file name and display in a TextBox 
-            if (result == true)
-            {
-                image_bytes = File.ReadAllBytes(dlg.FileName);
-                // Open document 
-                string filename = dlg.FileName;
-                Uri uri = new Uri(filename);
-                ImageSource imgSource = new BitmapImage(uri);
-                IMG.ImageSource = imgSource;
-            }
+            OpenAndReadImage openAndReadImg = new OpenAndReadImage();
+            IMG.ImageSource = openAndReadImg.OpenImg();
+            image_bytes = openAndReadImg.readBytes();
             
         }
 
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            if(image_bytes == null)
+            try
+            {
+                if(image_bytes == null)
             {
                 image_bytes = img_bytes;
                
             }
-             sql.Update(sql.Id, txt_FirstName.Text, txt_LastName.Text, txt_Patronymic.Text, "", (DateTime)date_Birth.SelectedDate, txt_ActiveRecord.Text, (DateTime)date_RecordNumber.SelectedDate, (DateTime)date_Committing.SelectedDate, txt_PlaceOfReg.Text, txt_performedSacrament.Text, txt_Notes.Text, sql.NameOfJournal, txt_FIinitials.Text, txt_MIinitials.Text, txt_R1initials.Text, txt_R2Iinitials.Text, txt_FatherPassport.Text, txt_MotherPassport.Text, txt_R1Passport.Text, txt_R2Passport.Text, (DateTime)date_Father.SelectedDate, (DateTime)date_Mother.SelectedDate, (DateTime)date_R1Birth.SelectedDate, (DateTime)date_R2Birth.SelectedDate, txt_AddressFather.Text, txt_MotherAddress.Text, txt_R1Address.Text, txt_R2Address.Text, txt_BirthCertificate.Text, "", "", "", image_bytes);
-            
-            
+             sql.Update(sql.Id, txt_FirstName.Text, txt_LastName.Text, txt_Patronymic.Text, Address.Text, (DateTime)date_Birth.SelectedDate, DateTime.MinValue, txt_ActiveRecord.Text, (DateTime)date_RecordNumber.SelectedDate, (DateTime)date_Committing.SelectedDate, txt_PlaceOfReg.Text, txt_performedSacrament.Text, txt_Notes.Text, sql.NameOfJournal, txt_FIinitials.Text, txt_MIinitials.Text, txt_R1initials.Text, txt_R2Iinitials.Text, txt_FatherPassport.Text, txt_MotherPassport.Text, txt_R1Passport.Text, txt_R2Passport.Text, (DateTime)date_Father.SelectedDate, (DateTime)date_Mother.SelectedDate, (DateTime)date_R1Birth.SelectedDate, (DateTime)date_R2Birth.SelectedDate, txt_AddressFather.Text, txt_MotherAddress.Text, txt_R1Address.Text, txt_R2Address.Text, txt_BirthCertificate.Text, "", "", "", image_bytes);
+     
 
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                MessageBox.Show("The record has successfuly updated.");
+                this.Close();
+            }
 
+            
+        }
+
+        private void btn_CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -22,42 +22,28 @@ namespace HumanMetricData.Windows.AddNewWindows
     /// </summary>
     public partial class AddNewCristening : Window
     {
-        RUEN ruen;
+        readonly RUEN ruen;
         byte[] image_bytes;
-        public AddNewCristening()
+        public AddNewCristening(string language)
         {
             InitializeComponent();
             ruen = new RUEN();
-            ChangeLanguage("En");
+            ChangeLanguage("en");
+            ChangeLanguage(language);
         }
 
         private void OpenImage_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".jpg";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
-
-
-            // Display OpenFileDialog by calling ShowDialog method 
-            Nullable<bool> result = dlg.ShowDialog();
-
-
-            // Get the selected file name and display in a TextBox 
-            if (result == true)
+            try
             {
-                image_bytes = File.ReadAllBytes(dlg.FileName);
-                // Open document 
-                string filename = dlg.FileName;
+                OpenAndReadImage openImg = new OpenAndReadImage();
+                IMG.ImageSource = openImg.OpenImg();
+                image_bytes = openImg.readBytes();
 
-                Uri uri = new Uri(filename);
-                ImageSource imgSource = new BitmapImage(uri);
-
-                IMG.ImageSource = imgSource;
             }
+            catch { }
+            
+            
         }
 
         public void ChangeLanguage(string lang)
@@ -71,6 +57,7 @@ namespace HumanMetricData.Windows.AddNewWindows
             FirstName.Content = ruen.FirstName;
             LastName.Content = ruen.LastName;
             Patronymic.Content = ruen.Patronymic;
+            address.Content = ruen.Address;
             PlaceOfregistration.Content = ruen.PlaceOfReg;
             SNBS.Content = ruen.SNBC;
             Parents.Content = ruen.Parents;
@@ -100,47 +87,22 @@ namespace HumanMetricData.Windows.AddNewWindows
         {
             try
             {
-                Sql dataManipulation = new Sql();
-                dataManipulation.InsertHuman(CrFirstName.Text, CrLastName.Text, CrPatronymic.Text, "", Convert.ToDateTime(CrDateOfBirth.SelectedDate));
-                dataManipulation.InsertBase(AddActiveRecord.Text, Convert.ToDateTime(AROfDate.SelectedDate), Convert.ToDateTime(CrDateOfCristening.SelectedDate), dataManipulation.GetId(), CrPlaceOfCr.Text, NameOfPerformed.Text, CrNotes.Text, "Cristening", txt_FIinitials.Text, txt_MIinitials.Text, txt_R1initials.Text, txt_R2Iinitials.Text, txt_PassportFirsh.Text,
+                Sql sql = new Sql();
+                sql.InsertHuman(CrFirstName.Text, CrLastName.Text, CrPatronymic.Text, Address.Text, (DateTime)CrDateOfBirth.SelectedDate, DateTime.MinValue);
+                sql.InsertBase(AddActiveRecord.Text, Convert.ToDateTime(AROfDate.SelectedDate), Convert.ToDateTime(CrDateOfCristening.SelectedDate), sql.GetId(), CrPlaceOfCr.Text, NameOfPerformed.Text, CrNotes.Text, "Cristening", txt_FIinitials.Text, txt_MIinitials.Text, txt_R1initials.Text, txt_R2Iinitials.Text, txt_PassportFirsh.Text,
                 txt_PassportSecond.Text, txt_PassportThird.Text, txt_PassportFour.Text, Convert.ToDateTime(BDateFirst.SelectedDate), Convert.ToDateTime(BDateSecond.SelectedDate), Convert.ToDateTime(BDateThird.SelectedDate), Convert.ToDateTime(BDateFour.SelectedDate), txt_AddressFirsh.Text, txt_AddressSecond.Text,
                 txt_AddressThird.Text, txt_AddressFour.Text);
-                dataManipulation.InsertDocuments(BirthCertNumber.Text, "", "", dataManipulation.GetId(), "");
-                dataManipulation.InsertImages(image_bytes, dataManipulation.GetId());
+                sql.InsertDocuments(BirthCertNumber.Text, "", "", sql.GetId(), "");
+                sql.InsertImages(image_bytes, sql.GetId());
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally { MessageBox.Show(ruen.SuccessfullyInserted); }
-            /*  AddActiveRecord.Text;
-              AROfDate.SelectedDate;
-              CrFirstName.Text;
-              CrLastName.Text;
-              CrPatronymic.Text;
-              CrDateOfBirth.SelectedDate;
-              CrDateOfCristening.SelectedDate;
-              CrPlaceOfCr.Text;
-              BirthCertNumber.Text;
-              txt_FIinitials.Text;
-              txt_MIinitials.Text;
-              txt_R1initials.Text;
-              txt_R2Iinitials.Text;
-              txt_PassportFirsh;
-              txt_PassportSecond;
-              txt_PassportThird;
-              txt_PassportFour;
-              txt_AddressFirsh;
-              txt_AddressSecond;
-              txt_AddressThird;
-              txt_AddressFour;
-              BDateFirst.SelectedDate;
-              BDateSecond.SelectedDate;
-              BDateThird.SelectedDate;
-              BDateFour.SelectedDate;
-              NameOfPerformed.Text;
-              CrNotes.Text; */
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            finally { MessageBox.Show(ruen.SuccessfullyInserted); this.Close(); }
+            
+        }
 
+        private void btn_Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,9 +46,9 @@
         </Grid.RowDefinitions>
         <Label x:Name="AddNewFuneralRecord" Content="Add new record to Funeral journal" FontWeight="Bold" Grid.Column="0" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="28"/>
         <Label x:Name="ActiveRecord" Content="A/R:" Grid.Row="2" HorizontalAlignment="Left" Padding="0,0,0,0" Width="32" VerticalAlignment="Center" Height="18" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Margin="10,0,0,0" />
-        <TextBox Grid.Row="2"  Margin="1,0,1,0"  Grid.Column="1" VerticalAlignment="Center" Height="20" />
+        <TextBox x:Name="txt_ActiveRecord" Grid.Row="2"  Margin="1,0,1,0"  Grid.Column="1" VerticalAlignment="Center" Height="20" />
         <Label x:Name="from" Content="of date:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,0" Height="19" Width="86" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch"/>
-        <DatePicker Grid.Row="2" Grid.Column="3" Padding="2,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Height="22" Width="114" >
+        <DatePicker x:Name="date_ArDate" Grid.Row="2" Grid.Column="3" Padding="2,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Height="22" Width="114" >
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -58,7 +58,7 @@
         
         
         <Label x:Name="dateOfDeath" Content="Date of death:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="0,0,0,0" Height="18" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-        <DatePicker Grid.Row="4" Grid.Column="1"  Padding="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Height="23" Width="112">
+        <DatePicker x:Name="date_DateOfDeath" Grid.Row="4" Grid.Column="1"  Padding="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Height="23" Width="112">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -66,7 +66,7 @@
             </DatePicker.Resources>
         </DatePicker>
         <Label x:Name="Birtday" Content="Birth date:" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Padding="0,0,0,0" VerticalContentAlignment="Center" Height="18" HorizontalContentAlignment="Left" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-        <DatePicker Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Height="22" Width="112">
+        <DatePicker x:Name="date_BirthDay" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Height="22" Width="112">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -75,7 +75,7 @@
         </DatePicker>
 
         <Label x:Name="DateOfFuneral" Content="Date of funeral:" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Padding="0,0,0,0" VerticalContentAlignment="Center" Height="18" HorizontalContentAlignment="Left" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-        <DatePicker Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Height="22" Width="112">
+        <DatePicker x:Name="date_DateOfFuneral" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Height="22" Width="112">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -86,16 +86,15 @@
         <Label x:Name="FirstName" Content="First Name" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,5,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="18" Width="82"/>
         <Label x:Name="LastName" Content="Last Name" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,5,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="19" Width="80"/>
         <Label x:Name="Patronymic" Content="Patronymic" Grid.Row="8" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,5,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="18" Width="84"/>
-        <TextBox Grid.Row="4" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
-        <TextBox Grid.Row="6" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
-        <TextBox Grid.Row="8" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
+        <TextBox x:Name="txt_FirstName" Grid.Row="4" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
+        <TextBox x:Name="txt_LastName" Grid.Row="6" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
+        <TextBox x:Name="txt_Patronymic" Grid.Row="8" Grid.Column="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0" Height="20"/>
         <Label x:Name="PlaceOfFuneral" Content="Place of funeral:" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Padding="0,0,5,0" HorizontalAlignment="Left" Height="18" Margin="10,0,0,0" />
 
-        <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="119,0,1,0" Height="20"/>
+        <TextBox x:Name="txt_PlaceOf" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="119,0,1,0" Height="20"/>
         <Label x:Name="SNCD" Content="Серия и № свидетельства о смерти:" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="10,0,0,0" Padding="0,0,0,0" VerticalContentAlignment="Center" Width="262" VerticalAlignment="Center"/>
         <DockPanel Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Margin="25,0,1,0" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-            <TextBox Grid.Row="12" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="40" />
-            <TextBox Grid.Row="12" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+            <TextBox x:Name="txt_CertificateOfDeath" Grid.Row="12" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
         </DockPanel>
 
@@ -111,13 +110,13 @@
 
         <Label x:Name="FuneralDirector" Content="Funeral Director" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="6" VerticalAlignment="Center" Padding="0,0,0,0" HorizontalAlignment="Center" Height="18"/>
         <Label x:Name="FuneralService" Content="The funeral service was performed" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" Padding="0,0,0,0" Margin="15,0,0,4" Grid.RowSpan="2"/>
-        <TextBox Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,4" Grid.RowSpan="2"/>
+        <TextBox x:Name="txt_PerformedSacrament" Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,4" Grid.RowSpan="2"/>
         <Label x:Name="Notes" Content="Notes" Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="2" Padding="0,0,0,0" Margin="15,0,0,0" VerticalAlignment="Center" Height="18"/>
-        <TextBox Grid.Row="18" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,0,20,4" Grid.RowSpan="2" />
+        <TextBox x:Name="txt_Notes" Grid.Row="18" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,0,20,4" Grid.RowSpan="2" />
         <Border Grid.Row="14" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="6" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1" Margin="10,0,10,3"/>
         <DockPanel Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Margin="0,3,0,7" Grid.RowSpan="3" VerticalAlignment="Stretch">
-            <Button Content="Save" Margin="0,0,5,0"/>
-            <Button Content="Close"/>
+            <Button Content="Save" Margin="0,0,5,0" Click="btn_SaveClick"/>
+            <Button Content="Close" Click="btn_CloseClick"/>
         </DockPanel>
 
         <DockPanel Grid.Row="2" Grid.Column="5" Grid.RowSpan="11" Margin="7,5,10,5" >
@@ -125,7 +124,7 @@
 
                 <Button x:Name="OpenImage" Click="OpenImage_Click">
                     <Button.Background>
-                        <ImageBrush x:Name="IMG"/>
+                        <ImageBrush x:Name="IMG" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumanMetricData.Windows.AddNewWindows"
         mc:Ignorable="d"
-        Title="AddNewWedding" Height="600" Width="800" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" FontSize="16" WindowStartupLocation="CenterScreen" FontFamily="Times New Roman">
+        Title="AddNewWedding" Height="620" Width="800" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" FontSize="16" WindowStartupLocation="CenterScreen" FontFamily="Times New Roman">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="43*"/>
@@ -59,15 +59,27 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label x:Name="AddNewWeddingRecord" Content="Add new record to Wedding journal" FontWeight="Bold" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="28"/>
         <Label x:Name="ActiveRecord" Content="A/R:" Grid.Row="2" HorizontalAlignment="Left" Padding="0,0,0,0" Width="32" VerticalAlignment="Center" Height="18" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Margin="14,0,0,0" Grid.ColumnSpan="2" />
-        <TextBox Grid.Row="2"  Margin="1,0,1,0"  Grid.Column="1" VerticalAlignment="Center" Height="20" />
+        <TextBox x:Name="txt_ActiveRecord" Grid.Row="2"  Margin="1,0,1,0"  Grid.Column="1" VerticalAlignment="Center" Height="20" />
         <Label x:Name="from" Content="of date:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0,0,0,0" Height="19" Width="85" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" Margin="15,0,0,0" Grid.ColumnSpan="2"/>
-        <DatePicker Grid.Row="2" Grid.Column="3" Padding="2,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="114" >
+        <DatePicker x:Name="date_ARDate" Grid.Row="2" Grid.Column="3" Padding="2,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="114" >
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+
+        <Label x:Name="dateOfWedding" Content="Date of Wedding:" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Padding="0,0,0,0" VerticalAlignment="Center"/>
+        <DatePicker x:Name="date_WeddingDate" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="2" Padding="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Width="114" >
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -78,15 +90,18 @@
 
 
 
-        <Border  Grid.Row="4" Grid.Column="0" Grid.RowSpan="19" Grid.ColumnSpan="8" BorderThickness="1,1,1,1" BorderBrush="#FFC3C3C3" Margin="10,1,10,1"/>
+        <Border  Grid.Row="4" Grid.Column="0" Grid.RowSpan="23" Grid.ColumnSpan="8" BorderThickness="1,1,1,1" BorderBrush="#FFC3C3C3" Margin="10,1,10,1"/>
         <Label x:Name="GettingMaried" Content="Getting Maried" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Height="27" HorizontalContentAlignment="Center"/>
         <Label x:Name="GettigMariedMan" Content="Getting Maried:" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="15,0,0,0" VerticalAlignment="Center" Height="28" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
-        <TextBox x:Name="txt_GMIinitialsMan" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,10,0"  VerticalAlignment="Center" Height="20" />
+        <TextBox x:Name="txt_GMFNameFirst" ToolTip="FirstName" Grid.Row="6" Grid.Column="2"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Left" Width="83" Margin="2,0,0,0" />
+        <TextBox x:Name="txt_GMNLNameFirst" ToolTip="LastName" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Left" Width="83" Margin="85,0,0,0" />
+        <TextBox x:Name="txt_GMNPatronymicFirst" ToolTip="Patronymic" Grid.Row="6" Grid.Column="3"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Right" Width="82" Margin="0,0,10,0" />
         <Label x:Name="GettingMariedWoman" Content="Getting Maried:" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2" Margin="10,0,0,0"  VerticalAlignment="Center" Height="28" Padding="0,0,0,0" VerticalContentAlignment="Center" />
-        <TextBox x:Name="txt_GMIinitialsWoman" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" Margin="0,0,20,0"  VerticalAlignment="Center" Height="20" />
-
+        <TextBox x:Name="txt_GMFNameSecond" ToolTip="FirstName" Grid.Row="6" Grid.Column="6"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Left" Width="82" Margin="4,0,0,0" />
+        <TextBox x:Name="txt_GMNLNameSecond" ToolTip="LastName" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Left" Width="82" Margin="86,0,0,0" />
+        <TextBox x:Name="txt_GMNPatronymicSecond" ToolTip="Patronymic" Grid.Row="6" Grid.Column="7"  VerticalAlignment="Center" Height="20" HorizontalAlignment="Right" Width="82" Margin="0,0,20,0" />
         <Label x:Name="GettingMariedBDateMan" Content="Дата рождения:" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="28" Margin="15,0,0,0" Padding="0,0,0,0" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
-        <DatePicker Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" >
+        <DatePicker x:Name="date_GettongMariedFirst" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="125" >
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -94,9 +109,9 @@
             </DatePicker.Resources>
         </DatePicker>
         <Label x:Name="GMAddressMan" Content="Address:" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="15,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
-        <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="40,0,0,0" Height="21"/>
+        <TextBox x:Name="txt_GMFirstAddress" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="40,0,10,0" Height="21"/>
 
-        <DatePicker Grid.Row="8" Grid.Column="6" Margin="10,0,20,0" Padding="0,0,0,0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center">
+        <DatePicker x:Name="date_GettongMariedSecond" Grid.Row="8" Grid.Column="6" Margin="10,0,20,0" Padding="0,0,0,0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="128">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
@@ -104,14 +119,20 @@
             </DatePicker.Resources>
         </DatePicker>
         <Label x:Name="GMAddressWoman" Content="Address:" Grid.Row="12" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
-        <TextBox Grid.Row="12" Grid.Column="5" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="40,0,20,0" Height="21"/>
-
-        <DockPanel Grid.Row="13" Grid.Column="1" Grid.RowSpan="11" Grid.ColumnSpan="4" Margin="100,5,100,5" HorizontalAlignment="Stretch" >
+        <TextBox x:Name="txt_GMSecondAddress" Grid.Row="12" Grid.Column="5" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="40,0,20,0" Height="21"/>
+        <Label x:Name="certificateOfWedding" Content="Certificate of Wedding:" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+        <TextBox x:Name="txt_CertificateOfWedding" Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="2" Margin="5,0,0,0" HorizontalAlignment="Right" Width="218"/>
+        <Label x:Name="placeOfWeding" Content="Place of Wedding:" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" Margin="15,0,0,0" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txt_PlaceOfWedding" Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="6" Margin="15,0,20,0" />
+        <DockPanel Grid.Row="17" Grid.Column="1" Grid.RowSpan="11" Grid.ColumnSpan="4" Margin="100,5,100,5" HorizontalAlignment="Stretch" Width="150" >
             <Border  Grid.Row="2" Grid.Column="4" Grid.RowSpan="11" Grid.ColumnSpan="2" Margin="1,1,1,1" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1">
+                <Border.Background>
+                    <ImageBrush Stretch="Uniform"/>
+                </Border.Background>
 
-                <Button x:Name="OpenImage" Click="OpenImage_Click">
+                <Button x:Name="btn_OpenImageFirst" Click="OpenImage_Click">
                     <Button.Background>
-                        <ImageBrush x:Name="IMG"/>
+                        <ImageBrush x:Name="IMG" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
 
@@ -121,12 +142,12 @@
         </DockPanel>
 
 
-        <DockPanel Grid.Row="13" Grid.Column="4" Grid.RowSpan="11" Grid.ColumnSpan="4" Margin="100,5,100,5" HorizontalAlignment="Stretch" >
+        <DockPanel Grid.Row="17" Grid.Column="4" Grid.RowSpan="11" Grid.ColumnSpan="4" Margin="100,5,100,5" HorizontalAlignment="Stretch" Width="150" >
             <Border  Grid.Row="2" Grid.Column="6" Grid.RowSpan="11" Grid.ColumnSpan="2" Margin="1,1,1,1" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1">
 
-                <Button x:Name="OpenImage2" VerticalAlignment="Stretch" >
+                <Button x:Name="btn_OpenImageSecond" VerticalAlignment="Stretch" Click="btn_OpenImage2_Click" >
                     <Button.Background>
-                        <ImageBrush x:Name="IMG2"/>
+                        <ImageBrush x:Name="IMG2" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
 
@@ -139,69 +160,69 @@
         <Label x:Name="GettingMariedBirthDateWoman" Content="Birth date:" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10,0,0,0" Height="28" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <Label x:Name="PassportGMMan" Content="Passport series and number:" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="15,0,0,0" HorizontalAlignment="Left" Width="179"/>
         <DockPanel Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Margin="66,0,10,0" VerticalAlignment="Center" Height="20" >
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="40" />
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+            
+            <TextBox x:Name="txt_passportGettingMariedFirst"  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
         </DockPanel>
-        <Label x:Name="PassportGMWoman" Content="Passport series and number:" Grid.Row="10" Grid.Column="4" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="10,0,0,0" HorizontalContentAlignment="Left"/>
+        <Label x:Name="PassportGMWoman" Content="Passport series and number:" Grid.Row="10" Grid.Column="4" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="10,0,0,0" HorizontalContentAlignment="Left" Width="188" HorizontalAlignment="Left"/>
         <DockPanel Grid.Row="10" Grid.Column="6" Grid.ColumnSpan="2" Margin="66,0,20,0" VerticalAlignment="Center" >
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="40" />
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+
+            <TextBox x:Name="txt_passportGettingMariedSecond"  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
         </DockPanel>
 
-        <Border  Grid.Row="24" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="8" BorderThickness="1,1,1,1" BorderBrush="#FFC3C3C3" Margin="10,1,10,1"/>
-        <Label x:Name="Witnesses" Content="Witnesses" Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Height="27" HorizontalContentAlignment="Center"/>
-        <Label x:Name="WitnessFirst" Content="Witness's 1 initials:" Grid.Row="26" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,0,0,0" VerticalAlignment="Center" Height="28" />
-        <TextBox x:Name="txt_R1initials" Grid.Row="26" Grid.Column="2" Grid.ColumnSpan="2" Margin="35,0,10,0"  VerticalAlignment="Center" Height="20" />
-        <Label x:Name="WitnessSecond" Content="Инициалы свидетеля:" Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="3"  VerticalAlignment="Center" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
-        <TextBox x:Name="txt_R2Iinitials" Grid.Row="30" Grid.Column="2" Grid.ColumnSpan="2" Margin="35,0,10,0"  VerticalAlignment="Center" Height="20" />
+        <Border  Grid.Row="28" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="8" BorderThickness="1,1,1,1" BorderBrush="#FFC3C3C3" Margin="10,1,10,1"/>
+        <Label x:Name="Witnesses" Content="Witnesses" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Height="27" HorizontalContentAlignment="Center"/>
+        <Label x:Name="WitnessFirst" Content="Witness's 1 initials:" Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,0,0,0" VerticalAlignment="Center" Height="28" HorizontalAlignment="Left" />
+        <TextBox x:Name="txt_R1Name" Grid.Row="30" Grid.Column="2" Grid.ColumnSpan="2" Margin="35,0,10,0"  VerticalAlignment="Center" Height="20" />
+        <Label x:Name="WitnessSecond" Content="Инициалы свидетеля:" Grid.Row="34" Grid.Column="0" Grid.ColumnSpan="3"  VerticalAlignment="Center" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
+        <TextBox x:Name="txt_R2Name" Grid.Row="34" Grid.Column="2" Grid.ColumnSpan="2" Margin="35,0,10,0"  VerticalAlignment="Center" Height="20" />
 
-        <Label x:Name="W1Bdate" Content="Дата рождения:" Grid.Row="26" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="28" Margin="5,0,0,0" Padding="0,0,0,0" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <DatePicker Grid.Row="26" Grid.Column="6" Grid.ColumnSpan="2" Margin="10,0,20,0" Padding="0,0,0,0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+        <Label x:Name="W1Bdate" Content="Дата рождения:" Grid.Row="30" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="28" Margin="5,0,0,0" Padding="0,0,0,0" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <DatePicker x:Name="date_R1BDate" Grid.Row="30" Grid.Column="6" Grid.ColumnSpan="2" Margin="10,0,20,0" Padding="0,0,0,0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <Label x:Name="W1Address" Content="Address:" Grid.Row="28" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="6,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
-        <TextBox Grid.Row="28" Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="72,0,20,0" Height="21"/>
+        <Label x:Name="W1Address" Content="Address:" Grid.Row="32" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="6,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
+        <TextBox  x:Name="txt_R1Address" Grid.Row="32" Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="72,0,20,0" Height="21"/>
 
-        <DatePicker Grid.Row="29" Grid.Column="6" Grid.ColumnSpan="2" Margin="10,3,20,4" Padding="0,0,0,0" Grid.RowSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <DatePicker x:Name="date_R2BDate" Grid.Row="34" Grid.Column="6" Grid.ColumnSpan="2" Padding="0,0,0,0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="IsReadOnly" Value="True"/>
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <Label x:Name="W2Address" Content="Address:" Grid.Row="32" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="6,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
-        <TextBox Grid.Row="32" Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="72,0,20,0" Height="21"/>
-        <Label x:Name="W2Bdate" Content="Birth date:" Grid.Row="30" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5,0,0,0" Height="28" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
-        <Label x:Name="PassportW1" Content="Passport series and number:" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="15,0,0,0" HorizontalAlignment="Left" Width="179"/>
-        <DockPanel Grid.Row="28" Grid.Column="2" Grid.ColumnSpan="2" Margin="66,0,10,0" VerticalAlignment="Center" Height="20" >
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="40" />
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <Label x:Name="W2Address" Content="Address:" Grid.Row="36" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" Margin="6,0,0,0" HorizontalAlignment="Left" Height="19" Width="57"/>
+        <TextBox x:Name="txt_R2Address" Grid.Row="36" Grid.Column="4" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="72,0,20,0" Height="21"/>
+        <Label x:Name="W2Bdate" Content="Birth date:" Grid.Row="34" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5,0,0,0" Height="28" Padding="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label x:Name="PassportW1" Content="Passport series and number:" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="15,0,0,0" HorizontalAlignment="Left" Width="179"/>
+        <DockPanel Grid.Row="32" Grid.Column="2" Grid.ColumnSpan="2" Margin="66,0,10,0" VerticalAlignment="Center" Height="20" >
+            
+            <TextBox x:Name="txt_R1Passport"  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
         </DockPanel>
-        <Label x:Name="PassportW2" Content="Passport series and number:" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="15,0,5,0" HorizontalContentAlignment="Left"/>
-        <DockPanel Grid.Row="32" Grid.Column="2" Grid.ColumnSpan="2" Margin="66,0,10,4" Grid.RowSpan="2" >
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="40" />
-            <TextBox  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <Label x:Name="PassportW2" Content="Passport series and number:" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="18" Margin="15,0,5,0" HorizontalContentAlignment="Left"/>
+        <DockPanel Grid.Row="36" Grid.Column="2" Grid.ColumnSpan="2" Margin="66,0,10,4" Grid.RowSpan="2" >
+
+            <TextBox  x:Name="txt_R2Passport" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
 
         </DockPanel>
 
 
 
-        <Label x:Name="Crowning" Content="The Crowning" Grid.Row="34" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Padding="0,0,0,0" HorizontalAlignment="Stretch" Height="18" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="CrowningInitials" Content="ФИО венчающего:" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" Margin="15,0,0,4" Grid.RowSpan="2" HorizontalAlignment="Left"/>
-        <TextBox Grid.Row="36" Grid.Column="2" Grid.ColumnSpan="4" Margin="20,0,20,0" VerticalAlignment="Center"/>
-        <Label x:Name="Notes" Content="Заметки:" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="2" Padding="0,0,0,0" Margin="15,0,0,0" VerticalAlignment="Center" Height="18"/>
-        <TextBox Grid.Row="38" Grid.Column="2" Grid.ColumnSpan="4" Margin="20,0,20,0" VerticalAlignment="Center"  />
-        <Border Grid.Row="34" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="8" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1" Margin="10,0,10,3"/>
-        <DockPanel Grid.Row="40" HorizontalAlignment="Center" Margin="0,3,0,7" Grid.RowSpan="3" Grid.ColumnSpan="8" VerticalAlignment="Stretch">
-            <Button Content="Save" Margin="0,0,5,0"/>
-            <Button Content="Close"/>
+        <Label x:Name="Crowning" Content="The Crowning" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Padding="0,0,0,0" HorizontalAlignment="Stretch" Height="18" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="CrowningInitials" Content="ФИО венчающего:" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,0,0,0" Margin="15,0,0,4" Grid.RowSpan="2" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txt_NameOfPerformed" Grid.Row="40" Grid.Column="2" Grid.ColumnSpan="4" Margin="20,0,20,0" VerticalAlignment="Center"/>
+        <Label x:Name="Notes" Content="Заметки:" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="2" Padding="0,0,0,0" Margin="15,0,0,0" VerticalAlignment="Center" Height="18"/>
+        <TextBox x:Name="txt_WeddingNotes" Grid.Row="42" Grid.Column="2" Grid.ColumnSpan="4" Margin="20,0,20,0" VerticalAlignment="Center"  />
+        <Border Grid.Row="38" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="8" BorderBrush="#FFD8D8D8" BorderThickness="1,1,1,1" Margin="10,0,10,3"/>
+        <DockPanel Grid.Row="44" HorizontalAlignment="Center" Margin="0,3,0,7"  Grid.ColumnSpan="8" VerticalAlignment="Stretch">
+            <Button Content="Save" Margin="0,0,5,0" Click="btn_SaveClick"/>
+            <Button Content="Close" Click="btn_CloseClick"/>
         </DockPanel>
 
 

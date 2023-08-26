@@ -13,6 +13,7 @@ namespace HumanMetricData.Model.Base
         public string LastName { get; set; }
         public string Patronymic { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfDeath { get; set; }
         public string Address { get; set; }
 
         

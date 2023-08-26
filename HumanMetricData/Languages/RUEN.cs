@@ -6,7 +6,9 @@ namespace HumanMetricData.Languages
 {
     public class RUEN
     {
-        
+        string _byDate;
+        string _fromDate;
+        string _toDate;
         string _lblAddRcrdCrsn;
         string _addnewfuneral;
         string _addrecordtowedding;
@@ -16,6 +18,7 @@ namespace HumanMetricData.Languages
         string _editwedding;
 
         string _activeRecord;
+        string _activerecord;
         string _from;
         string _dateOfCristening;
         string _dateofdeath;
@@ -52,7 +55,9 @@ namespace HumanMetricData.Languages
         string _baptizer;
         string _baptizerinitials;
         string _notes;
-        
+
+        string _weddingDate;
+        string _placeOfWedding;
         string _gettingMaried;
         string _gettingMariedMan;
         string _gettingMariedWoman;
@@ -85,9 +90,16 @@ namespace HumanMetricData.Languages
         string _birthCertificate;
         string _deathCertificate;
         string _weddingCertificate;
+        string _mainbirthcertificate;
+        string _maindeathcertificate;
+        string _mainweddingcertificate;
         string _dateofcommitting;
         string _performedsacrament;
         string _nameOfJournal;
+        string _dateof;
+        string _baptized;
+        string _placeOfCristening;
+
 
         public string NameOfJournal
         {
@@ -115,7 +127,58 @@ namespace HumanMetricData.Languages
                     _performedsacrament = "Performed sacrament";
             }
         }
-        public string DateOf { get; set; }
+        public string DateOf {
+            get { return _dateof; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _dateof = "От даты";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _dateof = "From date";
+            }
+        }
+
+        public string ByDate
+        {
+            get { return _byDate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _byDate = "По дате:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _byDate = "By date:";
+            }
+        }
+        public string DateFrom
+        {
+            get { return _fromDate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _fromDate = "От даты:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _fromDate = "From date:";
+            }
+        }
+        public string ToDate
+        {
+            get { return _toDate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _toDate = "До даты:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _toDate = "To date:";
+            }
+        }
         public string DateOfCommiting
         {
             get { return _dateofcommitting; }
@@ -168,6 +231,47 @@ namespace HumanMetricData.Languages
                     _weddingCertificate = "Wedding Certificate";
             }
         }
+
+        public string MainCertificateOfBirth
+        {
+            get { return _mainbirthcertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _mainbirthcertificate = "Серия и номер свидетельства о рождении:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _mainbirthcertificate = "The series and number of Birth Certificate:";
+            }
+        }
+        public string MainCertificateOfDeath
+        {
+            get { return _maindeathcertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _maindeathcertificate = "Серия и номер свидетельства о смерти:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _maindeathcertificate = "The series and number of Death Certificate:";
+            }
+        }
+        public string MainCertificateOfWedding
+        {
+            get { return _mainweddingcertificate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _mainweddingcertificate = "Серия и номер свидетельства о браке:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _mainweddingcertificate = "The series and number of Wedding Certificate:";
+            }
+        }
+
         public string Initials
         {
             get { return _initials; }
@@ -370,6 +474,19 @@ namespace HumanMetricData.Languages
                     _activeRecord = "№:";
             }
         }
+        public string ActiveRecordNumber
+        {
+            get { return _activerecord; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _activerecord = "А/З №:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _activerecord = "A/R №:";
+            }
+        }
         public string From
         {
             get { return _from; }
@@ -475,6 +592,8 @@ namespace HumanMetricData.Languages
                     _sncd = "Series and number of death sertificate:";
             }
         }
+       
+
 
         public string Parents
         {
@@ -697,6 +816,19 @@ namespace HumanMetricData.Languages
                     _baptizer = "Baptizer:";
             }
         }
+        public string Baptized
+        {
+            get { return _baptized; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _baptized = "Совершивший таинство";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _baptized = "Baptizer:";
+            }
+        }
         public string BaptizerInitials
         {
             get { return _baptizerinitials; }
@@ -723,6 +855,36 @@ namespace HumanMetricData.Languages
                     _notes = "Notes:";
             }
         }
+
+
+
+        public string DateOfWedding
+        {
+            get { return _weddingDate; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _weddingDate = "Дата венчания:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _weddingDate = "Date of wedding:";
+            }
+        }
+        public string PlaceOfWedding
+        {
+            get { return _placeOfWedding; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _placeOfWedding = "Место венчания:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _placeOfWedding = "Place of wedding:";
+            }
+        }
+
 
         public string GettingMaried
         {
@@ -971,6 +1133,8 @@ namespace HumanMetricData.Languages
                     _crowning = "Crowning";
             }
         }
+
+        
         public string CrowningInitials
         {
             get { return _crowningInitials; }
@@ -981,7 +1145,7 @@ namespace HumanMetricData.Languages
                     _crowningInitials = "ФИО венчающего:";
                 }
                 else if (value == "EN" || value == "en" || value == "En")
-                    _crowningInitials = "Crowning's initials:";
+                    _crowningInitials = "Crowning's name:";
             }
         }
 
@@ -1009,6 +1173,20 @@ namespace HumanMetricData.Languages
                 }
                 else if (value == "EN" || value == "en" || value == "En")
                     _dateoffuneral = "Date of funeral:";
+            }
+        }
+
+        public string PlaceOfCristening
+        {
+            get { return _placeOfCristening; }
+            set
+            {
+                if (value == "RU" || value == "ru" || value == "Ru")
+                {
+                    _placeOfCristening = "Место крещения:";
+                }
+                else if (value == "EN" || value == "en" || value == "En")
+                    _placeOfCristening = "Place of Cristening";
             }
         }
 
@@ -1068,14 +1246,18 @@ namespace HumanMetricData.Languages
 
         public void ChengeLanguage(string lang)
         {
+            Baptized = lang;
+            ByDate = lang;
             LabelAddRecordCristening = lang;
             AddNewFuneralRecord = lang;
             AddWeddingRecord = lang;
             EditCristening = lang;
             EditFuneral = lang;
             EditWedding = lang;
+            PlaceOfCristening = lang;
 
             ActiveRecord = lang;
+            ActiveRecordNumber = lang;
             From = lang;
             DateOfCristening = lang;
             Birthday = lang;
@@ -1104,7 +1286,8 @@ namespace HumanMetricData.Languages
             BaptizerInitials = lang;
             Notes = lang;
 
-            
+            DateOfWedding = lang;
+            PlaceOfWedding = lang;
             GettingMaried = lang;
             GettingMariedMan = lang;
             GettingMariedWoman = lang;
@@ -1142,9 +1325,17 @@ namespace HumanMetricData.Languages
             CertificateOfBirth = lang;
             CertificateOfDeath = lang;
             CertificateOfWedding = lang;
+            MainCertificateOfBirth = lang;
+            MainCertificateOfDeath = lang;
+            MainCertificateOfWedding = lang;
             DateOfCommiting = lang;
             PerformedSacrament = lang;
             NameOfJournal = lang;
+            DateOf = lang;
+            DateFrom = lang;
+            ToDate = lang;
+
         }
+        
     }
 }

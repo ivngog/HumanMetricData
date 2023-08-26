@@ -15,14 +15,21 @@
             <RowDefinition Height="215*"/>
         </Grid.RowDefinitions>
         <Menu x:Name="menu" Grid.Row="0" >
-            <MenuItem x:Name="file" Width="Auto" Height="22" Header="_File"/>
+            <MenuItem x:Name="file" Width="Auto" Height="22" Header="_File">
+                <MenuItem x:Name="itm_OpenDb" Header="Open database file"/>
+                <MenuItem x:Name="itm_OpenJournals" Header="Set puth to Journals"/>
+            </MenuItem>
             <MenuItem Header="Journals">
                 <MenuItem x:Name="Cristening" Header="Cristening" Click="OpenCristening_Click"/>
                 <MenuItem x:Name="Funeral" Header="Funeral" Click="OpenFuneral_Click"/>
                 <MenuItem x:Name="Wedding" Header="Wedding" Click="OpenWedding_Click"/>
 
             </MenuItem>
-            
+            <MenuItem Header="Language">
+                <MenuItem x:Name="Rus" Header="Ru" Click="btnRu_Click"/>
+                <MenuItem x:Name="Eng" Header="En" Click="btnEng_Click"/>
+            </MenuItem>
+
         </Menu>
         <ContentControl x:Name="MainContent" Grid.Row="1">
             <Image Source="{Binding ImageSource, Source={StaticResource Main_Picture}}" Stretch="Fill"/>

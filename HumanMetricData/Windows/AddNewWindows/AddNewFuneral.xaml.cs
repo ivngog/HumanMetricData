@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using HumanMetricData.Languages;
+using HumanMetricData.SQLOperations;
+using HumanMetricData.Images;
 
 namespace HumanMetricData.Windows.AddNewWindows
 {
@@ -18,15 +20,18 @@ namespace HumanMetricData.Windows.AddNewWindows
     /// </summary>
     public partial class AddNewFuneral : Window
     {
-        public AddNewFuneral()
+        readonly RUEN ruen;
+        byte[] image_bytes;
+        public AddNewFuneral(string language)
         {
             InitializeComponent();
+            ruen = new RUEN();
             ChangeLanguage("en");
+            ChangeLanguage(language);
         }
 
         public void ChangeLanguage(string lang)
         {
-            RUEN ruen = new RUEN();
             ruen.ChengeLanguage(lang);
             AddNewFuneralRecord.Content = ruen.AddNewFuneralRecord;
             ActiveRecord.Content = ruen.ActiveRecord;
@@ -46,26 +51,32 @@ namespace HumanMetricData.Windows.AddNewWindows
 
         private void OpenImage_Click(object sender, RoutedEventArgs e)
         {
-            // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".jpg";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
-
-
-            // Display OpenFileDialog by calling ShowDialog method 
-            Nullable<bool> result = dlg.ShowDialog();
-
-
-            // Get the selected file name and display in a TextBox 
-            if (result == true)
+            try
             {
-                // Open document 
-                string filename = dlg.FileName;
-                Uri uri = new Uri(filename);
-                ImageSource imgSource = new BitmapImage(uri);
-                IMG.ImageSource = imgSource;
+                OpenAndReadImage openImg = new OpenAndReadImage();
+                IMG.ImageSource = openImg.OpenImg();
+                image_bytes = openImg.readBytes();
+
             }
+            catch { }
+        }
+
+        private void btn_SaveClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Sql sql = new Sql();
+                sql.InsertHuman(txt_FirstName.Text, txt_LastName.Text, txt_Patronymic.Text, "", (DateTime)date_BirthDay.SelectedDate, (DateTime)date_DateOfDeath.SelectedDate);
+                sql.InsertBase(txt_ActiveRecord.Text, Convert.ToDateTime(date_ArDate.SelectedDate), Convert.ToDateTime(date_DateOfFuneral.SelectedDate), sql.GetId(), txt_PlaceOf.Text, txt_PerformedSacrament.Text, txt_Notes.Text, "Funeral", "", "", "", "", "", "", "", "", DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, "", "", "", "");
+                sql.InsertDocuments("", txt_CertificateOfDeath.Text, "", sql.GetId(), "");
+                sql.InsertImages(image_bytes, sql.GetId());
+            }
+            finally { MessageBox.Show(ruen.SuccessfullyInserted); this.Close(); }
+        }
+
+        private void btn_CloseClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
